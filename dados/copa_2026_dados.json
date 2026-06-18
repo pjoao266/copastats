@@ -196,7 +196,7 @@
       "match_id": 15186731,
       "home": "Czechia",
       "away": "South Africa",
-      "home_score": 0,
+      "home_score": 1,
       "away_score": 0,
       "status": "1st half"
     }
@@ -1326,6 +1326,21 @@
       "is_home": false,
       "is_own_goal": false,
       "is_winning_goal": false
+    },
+    {
+      "match_id": 15186731,
+      "minute": "6",
+      "scorer_id": 825731,
+      "scorer_name": "Michal Sadílek",
+      "assist_id": null,
+      "assist_name": null,
+      "goal_type": "Bola rolando",
+      "box_location": "Dentro da area",
+      "impact": "Lideranca",
+      "is_tie": false,
+      "is_home": true,
+      "is_own_goal": false,
+      "is_winning_goal": true
     }
   ],
   "player_match_stats": [
@@ -7323,18 +7338,10 @@
     },
     {
       "match_id": 15186731,
-      "player_id": 109002,
-      "player_name": "Vladimír Darida",
-      "xg": 0,
-      "xa": 0.00001558,
-      "rating": null
-    },
-    {
-      "match_id": 15186731,
       "player_id": 138024,
       "player_name": "Vladimír Coufal",
       "xg": 0,
-      "xa": 0.00038731,
+      "xa": 0.0575183,
       "rating": null
     },
     {
@@ -7349,16 +7356,24 @@
       "match_id": 15186731,
       "player_id": 280609,
       "player_name": "Patrik Schick",
-      "xg": 0.2111,
-      "xa": 0.00022548,
+      "xg": 0.089055627584457,
+      "xa": 0.00087424,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 539792,
+      "player_name": "Ronwen Williams",
+      "xg": 0,
+      "xa": 0.00000397,
       "rating": null
     },
     {
       "match_id": 15186731,
       "player_id": 825731,
       "player_name": "Michal Sadílek",
-      "xg": 0,
-      "xa": 0.00037367,
+      "xg": 0.039,
+      "xa": 0.00334297,
       "rating": null
     },
     {
@@ -7366,7 +7381,23 @@
       "player_id": 856250,
       "player_name": "Ladislav Krejčí",
       "xg": 0,
-      "xa": 0.0180243,
+      "xa": 0.0180354,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 881117,
+      "player_name": "Teboho Mokoena",
+      "xg": 0,
+      "xa": 0.00047801,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 936047,
+      "player_name": "Khuliso Mudau",
+      "xg": 0,
+      "xa": 0.00008181,
       "rating": null
     },
     {
@@ -7387,10 +7418,50 @@
     },
     {
       "match_id": 15186731,
+      "player_id": 963801,
+      "player_name": "Adam Hložek",
+      "xg": 0,
+      "xa": 0.0157491,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 984505,
+      "player_name": "Oswin Appollis",
+      "xg": 0,
+      "xa": 0.00014308,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 1014410,
+      "player_name": "Thalente Mbatha",
+      "xg": 0,
+      "xa": 0.00021767,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 1179164,
+      "player_name": "Thapelo Maseko",
+      "xg": 0,
+      "xa": 0.00022162,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
       "player_id": 1403491,
       "player_name": "Alexandr Sojka",
       "xg": 0,
-      "xa": 0.00093008,
+      "xa": 0.0859893,
+      "rating": null
+    },
+    {
+      "match_id": 15186731,
+      "player_id": 1507710,
+      "player_name": "Ime Okon",
+      "xg": 0,
+      "xa": 0.00002568,
       "rating": null
     },
     {
@@ -7398,7 +7469,7 @@
       "player_id": 2058228,
       "player_name": "Mbekezeli Mbokazi",
       "xg": 0,
-      "xa": 4.9e-7,
+      "xa": 0.00004137,
       "rating": null
     }
   ],
@@ -29140,6 +29211,11 @@
     {
       "player_id": "823941",
       "player_name": "Alexander Isak",
+      "points": 3
+    },
+    {
+      "player_id": "825731",
+      "player_name": "Michal Sadílek",
       "points": 3
     },
     {
