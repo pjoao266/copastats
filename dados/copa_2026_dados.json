@@ -206,7 +206,7 @@
       "away": "Bosnia & Herzegovina",
       "home_score": 0,
       "away_score": 0,
-      "status": "Halftime"
+      "status": "2nd half"
     }
   ],
   "goals": [
@@ -7603,7 +7603,7 @@
       "match_id": 15186806,
       "player_id": 14990,
       "player_name": "Edin Džeko",
-      "xg": 0.16161443665623199,
+      "xg": 0.16268037632107202,
       "xa": 0.146628,
       "rating": 6.6
     },
@@ -7612,7 +7612,7 @@
       "player_id": 67769,
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
-      "xa": 0.0173379,
+      "xa": 0.0173888,
       "rating": 6.7
     },
     {
@@ -7668,7 +7668,7 @@
       "player_id": 325061,
       "player_name": "Nikola Vasilj",
       "xg": 0,
-      "xa": 0.00064982,
+      "xa": 0.00046778,
       "rating": 6.5
     },
     {
@@ -7676,7 +7676,7 @@
       "player_id": 352296,
       "player_name": "Breel Embolo",
       "xg": 0,
-      "xa": 0.0120195,
+      "xa": 0.0120478,
       "rating": 6.6
     },
     {
@@ -7684,7 +7684,7 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0138337,
+      "xa": 0.0138577,
       "rating": 7
     },
     {
