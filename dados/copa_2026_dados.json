@@ -7620,15 +7620,15 @@
       "player_id": 115516,
       "player_name": "Remo Freuler",
       "xg": 0,
-      "xa": 0.00473673,
-      "rating": 6.6
+      "xa": 0.00544057,
+      "rating": 6.5
     },
     {
       "match_id": 15186806,
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.0163671,
+      "xa": 0.0264858,
       "rating": 6.6
     },
     {
@@ -7644,7 +7644,7 @@
       "player_id": 157377,
       "player_name": "Silvan Widmer",
       "xg": 0,
-      "xa": 0.00020995,
+      "xa": 0.00021086,
       "rating": 6.6
     },
     {
@@ -7652,8 +7652,8 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.00460636,
-      "rating": 6.6
+      "xa": 0.00460956,
+      "rating": 6.7
     },
     {
       "match_id": 15186806,
@@ -7684,8 +7684,8 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0027598,
-      "rating": 6.6
+      "xa": 0.00348695,
+      "rating": 6.5
     },
     {
       "match_id": 15186806,
@@ -7725,14 +7725,14 @@
       "player_name": "Fabian Rieder",
       "xg": 0,
       "xa": 0.0125425,
-      "rating": 6.5
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
       "player_id": 944327,
       "player_name": "Dan Ndoye",
       "xg": 0.022053569555283,
-      "xa": 0.00157004,
+      "xa": 0.00378342,
       "rating": 6.5
     },
     {
