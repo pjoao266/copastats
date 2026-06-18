@@ -197,7 +197,7 @@
       "home": "Czechia",
       "away": "South Africa",
       "home_score": 1,
-      "away_score": 0,
+      "away_score": 1,
       "status": "2nd half"
     }
   ],
@@ -1340,7 +1340,22 @@
       "is_tie": false,
       "is_home": true,
       "is_own_goal": false,
-      "is_winning_goal": true
+      "is_winning_goal": false
+    },
+    {
+      "match_id": 15186731,
+      "minute": "83",
+      "scorer_id": 881117,
+      "scorer_name": "Teboho Mokoena",
+      "assist_id": null,
+      "assist_name": null,
+      "goal_type": "Penalti",
+      "box_location": "Dentro da area",
+      "impact": "Empate",
+      "is_tie": true,
+      "is_home": false,
+      "is_own_goal": false,
+      "is_winning_goal": false
     }
   ],
   "player_match_stats": [
@@ -7350,7 +7365,7 @@
       "player_name": "Jaroslav Zelený",
       "xg": 0,
       "xa": 0.0481126,
-      "rating": 6.7
+      "rating": 6.4
     },
     {
       "match_id": 15186731,
@@ -7358,15 +7373,15 @@
       "player_name": "Vladimír Coufal",
       "xg": 0,
       "xa": 0.171058,
-      "rating": 6.9
+      "rating": 6.8
     },
     {
       "match_id": 15186731,
       "player_id": 151440,
       "player_name": "Tomáš Holeš",
       "xg": 0,
-      "xa": 0.00546213,
-      "rating": 6.6
+      "xa": 0.00564208,
+      "rating": 6.4
     },
     {
       "match_id": 15186731,
@@ -7390,7 +7405,7 @@
       "player_name": "Tomáš Souček",
       "xg": 0,
       "xa": 0.00024501,
-      "rating": 6.5
+      "rating": 6.4
     },
     {
       "match_id": 15186731,
@@ -7405,7 +7420,7 @@
       "player_id": 837099,
       "player_name": "Aubrey Modiba",
       "xg": 0.028978825546801,
-      "xa": 0.107184,
+      "xa": 0.108044,
       "rating": 7.1
     },
     {
@@ -7414,7 +7429,7 @@
       "player_name": "Lukáš Provod",
       "xg": 0,
       "xa": 0.00006694,
-      "rating": 6.4
+      "rating": 6.3
     },
     {
       "match_id": 15186731,
@@ -7422,30 +7437,30 @@
       "player_name": "Ladislav Krejčí",
       "xg": 0.154699264094233,
       "xa": 0.0632743,
-      "rating": 7.5
+      "rating": 7.3
     },
     {
       "match_id": 15186731,
       "player_id": 881117,
       "player_name": "Teboho Mokoena",
-      "xg": 0.012109794653952,
-      "xa": 0.270964,
-      "rating": 7.2
+      "xg": 0.800509794653952,
+      "xa": 0.280399,
+      "rating": 7.9
     },
     {
       "match_id": 15186731,
       "player_id": 927366,
       "player_name": "Matěj Kovář",
       "xg": 0,
-      "xa": 0.00014707,
-      "rating": 6.3
+      "xa": 0.00014685,
+      "rating": 6.2
     },
     {
       "match_id": 15186731,
       "player_id": 936047,
       "player_name": "Khuliso Mudau",
       "xg": 0,
-      "xa": 0.248693,
+      "xa": 0.251328,
       "rating": 6.6
     },
     {
@@ -7462,22 +7477,22 @@
       "player_name": "Pavel Šulc",
       "xg": 0,
       "xa": 0.0912706,
-      "rating": 6.6
+      "rating": 6.4
     },
     {
       "match_id": 15186731,
       "player_id": 957615,
       "player_name": "Robin Hranáč",
       "xg": 0,
-      "xa": 0.00135187,
-      "rating": 6.9
+      "xa": 0.00135216,
+      "rating": 6.7
     },
     {
       "match_id": 15186731,
       "player_id": 963084,
       "player_name": "David Zima",
       "xg": 0,
-      "xa": 4.3e-7,
+      "xa": 0.00000309,
       "rating": null
     },
     {
@@ -7493,8 +7508,8 @@
       "player_id": 984505,
       "player_name": "Oswin Appollis",
       "xg": 0.018657702952623,
-      "xa": 0.0484251,
-      "rating": 7
+      "xa": 0.0510895,
+      "rating": 6.9
     },
     {
       "match_id": 15186731,
@@ -7517,7 +7532,7 @@
       "player_id": 1022170,
       "player_name": "Evidence Makgopa",
       "xg": 0.033025819808245,
-      "xa": 0,
+      "xa": 0.00103535,
       "rating": 6.4
     },
     {
@@ -7532,8 +7547,8 @@
       "match_id": 15186731,
       "player_id": 1179164,
       "player_name": "Thapelo Maseko",
-      "xg": 0.128724690526726,
-      "xa": 0.0225427,
+      "xg": 0.1516196615994,
+      "xa": 0.0247581,
       "rating": 6.8
     },
     {
@@ -7549,7 +7564,7 @@
       "player_id": 1507710,
       "player_name": "Ime Okon",
       "xg": 0,
-      "xa": 0.00415674,
+      "xa": 0.0070365,
       "rating": 7
     },
     {
@@ -7557,15 +7572,15 @@
       "player_id": 1564998,
       "player_name": "Relebohile Mofokeng",
       "xg": 0,
-      "xa": 0.0192558,
-      "rating": 6.4
+      "xa": 0.0202977,
+      "rating": 6.3
     },
     {
       "match_id": 15186731,
       "player_id": 2058228,
       "player_name": "Mbekezeli Mbokazi",
       "xg": 0.030504494905471996,
-      "xa": 0.00586205,
+      "xa": 0.00813659,
       "rating": 6.6
     }
   ],
@@ -29310,11 +29325,6 @@
       "points": 3
     },
     {
-      "player_id": "825731",
-      "player_name": "Michal Sadílek",
-      "points": 3
-    },
-    {
       "player_id": "839956",
       "player_name": "Erling Haaland",
       "points": 3
@@ -29402,6 +29412,11 @@
     {
       "player_id": "868812",
       "player_name": "Vinícius Júnior",
+      "points": 1
+    },
+    {
+      "player_id": "881117",
+      "player_name": "Teboho Mokoena",
       "points": 1
     },
     {
