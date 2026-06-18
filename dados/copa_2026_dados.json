@@ -204,7 +204,7 @@
       "match_id": 15186806,
       "home": "Switzerland",
       "away": "Bosnia & Herzegovina",
-      "home_score": 1,
+      "home_score": 2,
       "away_score": 0,
       "status": "2nd half"
     }
@@ -1379,6 +1379,21 @@
       "is_home": true,
       "is_own_goal": false,
       "is_winning_goal": true
+    },
+    {
+      "match_id": 15186806,
+      "minute": "84",
+      "scorer_id": 872919,
+      "scorer_name": "Rubén Vargas",
+      "assist_id": 352296,
+      "assist_name": "Breel Embolo",
+      "goal_type": "Bola rolando",
+      "box_location": "Dentro da area",
+      "impact": "Ampliar",
+      "is_tie": false,
+      "is_home": true,
+      "is_own_goal": false,
+      "is_winning_goal": false
     }
   ],
   "player_match_stats": [
@@ -7627,7 +7642,7 @@
       "player_id": 67769,
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
-      "xa": 0.0354073,
+      "xa": 0.0363674,
       "rating": 6.8
     },
     {
@@ -7635,7 +7650,7 @@
       "player_id": 115516,
       "player_name": "Remo Freuler",
       "xg": 0.015920124948025,
-      "xa": 0.261339,
+      "xa": 0.262701,
       "rating": 7.5
     },
     {
@@ -7643,7 +7658,7 @@
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.0655664,
+      "xa": 0.0669193,
       "rating": 7.6
     },
     {
@@ -7652,14 +7667,14 @@
       "player_name": "Sead Kolašinac",
       "xg": 0,
       "xa": 0.00840418,
-      "rating": 6.3
+      "rating": 6
     },
     {
       "match_id": 15186806,
       "player_id": 157377,
       "player_name": "Silvan Widmer",
       "xg": 0,
-      "xa": 0.003287,
+      "xa": 0.00349262,
       "rating": 6.3
     },
     {
@@ -7667,7 +7682,7 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.0155781,
+      "xa": 0.0166954,
       "rating": 7
     },
     {
@@ -7676,7 +7691,7 @@
       "player_name": "Ivan Šunjić",
       "xg": 0,
       "xa": 0.00220718,
-      "rating": 6.5
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7684,30 +7699,30 @@
       "player_name": "Nikola Vasilj",
       "xg": 0,
       "xa": 0.00052654,
-      "rating": 6.5
+      "rating": 5.8
     },
     {
       "match_id": 15186806,
       "player_id": 352296,
       "player_name": "Breel Embolo",
       "xg": 0.1364681571722,
-      "xa": 0.0207925,
-      "rating": 7.3
+      "xa": 0.132364,
+      "rating": 7.6
     },
     {
       "match_id": 15186806,
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0181819,
-      "rating": 7.7
+      "xa": 0.0202449,
+      "rating": 7.8
     },
     {
       "match_id": 15186806,
       "player_id": 556866,
       "player_name": "Gregor Kobel",
       "xg": 0,
-      "xa": 0.00017024,
+      "xa": 0.00017944,
       "rating": 6.5
     },
     {
@@ -7715,8 +7730,8 @@
       "player_id": 799054,
       "player_name": "Djibril Sow",
       "xg": 0,
-      "xa": 0.0002318,
-      "rating": 6.5
+      "xa": 0.0060354,
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7724,7 +7739,7 @@
       "player_name": "Nikola Katić",
       "xg": 0,
       "xa": 0.00144913,
-      "rating": 7.1
+      "rating": 6.8
     },
     {
       "match_id": 15186806,
@@ -7739,8 +7754,8 @@
       "player_id": 872919,
       "player_name": "Rubén Vargas",
       "xg": 0.094435125589371,
-      "xa": 0.0124904,
-      "rating": 6.8
+      "xa": 0.0128756,
+      "rating": 7.3
     },
     {
       "match_id": 15186806,
@@ -7772,7 +7787,7 @@
       "player_name": "Ivan Bašić",
       "xg": 0,
       "xa": 0.00360704,
-      "rating": 6.5
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7788,7 +7803,7 @@
       "player_name": "Amar Dedić",
       "xg": 0.015353715978563,
       "xa": 0.00709771,
-      "rating": 6.3
+      "rating": 6
     },
     {
       "match_id": 15186806,
@@ -7804,7 +7819,7 @@
       "player_name": "Amar Memić",
       "xg": 0.015491207130253,
       "xa": 0.00857632,
-      "rating": 6.7
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7820,14 +7835,14 @@
       "player_name": "Kerim Alajbegović",
       "xg": 0,
       "xa": 0.106005,
-      "rating": 6.3
+      "rating": 6.2
     },
     {
       "match_id": 15186806,
       "player_id": 1518931,
       "player_name": "Johan Manzambi",
       "xg": 0.063893683254719,
-      "xa": 0.0119874,
+      "xa": 0.012567,
       "rating": 7.5
     }
   ],
