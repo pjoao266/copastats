@@ -7636,7 +7636,7 @@
       "player_id": 142148,
       "player_name": "Sead Kolašinac",
       "xg": 0,
-      "xa": 0.00482784,
+      "xa": 0.00826497,
       "rating": 6.3
     },
     {
@@ -7660,7 +7660,7 @@
       "player_id": 283833,
       "player_name": "Ivan Šunjić",
       "xg": 0,
-      "xa": 0.00169836,
+      "xa": 0.00197632,
       "rating": 6.5
     },
     {
@@ -7668,7 +7668,7 @@
       "player_id": 325061,
       "player_name": "Nikola Vasilj",
       "xg": 0,
-      "xa": 0.00050833,
+      "xa": 0.00050912,
       "rating": 7.3
     },
     {
@@ -7676,7 +7676,7 @@
       "player_id": 352296,
       "player_name": "Breel Embolo",
       "xg": 0.1364681571722,
-      "xa": 0.0122585,
+      "xa": 0.0207925,
       "rating": 7
     },
     {
@@ -7700,7 +7700,7 @@
       "player_id": 831488,
       "player_name": "Nikola Katić",
       "xg": 0,
-      "xa": 0.00071862,
+      "xa": 0.00072529,
       "rating": 7.2
     },
     {
@@ -7709,7 +7709,7 @@
       "player_name": "Michel Aebischer",
       "xg": 0.062050618231297,
       "xa": 0.029593,
-      "rating": 6.7
+      "rating": 6.8
     },
     {
       "match_id": 15186806,
@@ -7740,7 +7740,7 @@
       "player_id": 1049701,
       "player_name": "Ivan Bašić",
       "xg": 0,
-      "xa": 0.0000945,
+      "xa": 0.00323073,
       "rating": null
     },
     {
@@ -7755,8 +7755,8 @@
       "match_id": 15186806,
       "player_id": 1102791,
       "player_name": "Amar Dedić",
-      "xg": 0,
-      "xa": 0.00561474,
+      "xg": 0.0252,
+      "xa": 0.00692476,
       "rating": 6.6
     },
     {
@@ -7764,7 +7764,7 @@
       "player_id": 1118177,
       "player_name": "Tarik Muharemović",
       "xg": 0,
-      "xa": 0.00135412,
+      "xa": 0.00135915,
       "rating": 6.9
     },
     {
@@ -7772,7 +7772,7 @@
       "player_id": 1129610,
       "player_name": "Amar Memić",
       "xg": 0.015491207130253,
-      "xa": 0.00494613,
+      "xa": 0.00854066,
       "rating": 6.7
     },
     {
@@ -7780,7 +7780,7 @@
       "player_id": 1136110,
       "player_name": "Esmir Bajraktarević",
       "xg": 0,
-      "xa": 0.00049319,
+      "xa": 0.0024384,
       "rating": null
     },
     {
@@ -7788,7 +7788,7 @@
       "player_id": 1425366,
       "player_name": "Kerim Alajbegović",
       "xg": 0,
-      "xa": 0.105834,
+      "xa": 0.105994,
       "rating": 6.4
     }
   ],
