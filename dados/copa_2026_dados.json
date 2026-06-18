@@ -7605,7 +7605,7 @@
       "player_name": "Edin Džeko",
       "xg": 0.16268037632107202,
       "xa": 0.148978,
-      "rating": 6.6
+      "rating": 6.7
     },
     {
       "match_id": 15186806,
@@ -7613,7 +7613,7 @@
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
       "xa": 0.0336308,
-      "rating": 6.8
+      "rating": 6.9
     },
     {
       "match_id": 15186806,
@@ -7636,7 +7636,7 @@
       "player_id": 142148,
       "player_name": "Sead Kolašinac",
       "xg": 0,
-      "xa": 0.00357259,
+      "xa": 0.00440086,
       "rating": 6.2
     },
     {
@@ -7652,15 +7652,15 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.015553,
-      "rating": 7.1
+      "xa": 0.0155557,
+      "rating": 7
     },
     {
       "match_id": 15186806,
       "player_id": 283833,
       "player_name": "Ivan Šunjić",
       "xg": 0,
-      "xa": 0.0014627,
+      "xa": 0.00169836,
       "rating": 6.5
     },
     {
@@ -7669,7 +7669,7 @@
       "player_name": "Nikola Vasilj",
       "xg": 0,
       "xa": 0.00050833,
-      "rating": 6.5
+      "rating": 6.9
     },
     {
       "match_id": 15186806,
@@ -7677,7 +7677,7 @@
       "player_name": "Breel Embolo",
       "xg": 0.1364681571722,
       "xa": 0.0122585,
-      "rating": 6.4
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7749,7 +7749,7 @@
       "player_name": "Amar Dedić",
       "xg": 0,
       "xa": 0.00530233,
-      "rating": 6.7
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7769,10 +7769,18 @@
     },
     {
       "match_id": 15186806,
+      "player_id": 1136110,
+      "player_name": "Esmir Bajraktarević",
+      "xg": 0,
+      "xa": 0.00025396,
+      "rating": null
+    },
+    {
+      "match_id": 15186806,
       "player_id": 1425366,
       "player_name": "Kerim Alajbegović",
       "xg": 0,
-      "xa": 0.104803,
+      "xa": 0.104915,
       "rating": 6.3
     }
   ],
