@@ -7944,7 +7944,7 @@
       "player_name": "Maxime Crépeau",
       "xg": 0,
       "xa": 0.00000509,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -7952,7 +7952,15 @@
       "player_name": "Boualem Khoukhi",
       "xg": 0,
       "xa": 0.00004089,
-      "rating": null
+      "rating": 6.5
+    },
+    {
+      "match_id": 15186798,
+      "player_id": 790179,
+      "player_name": "Cyle Larin",
+      "xg": 0,
+      "xa": 0,
+      "rating": 6.4
     },
     {
       "match_id": 15186798,
@@ -7960,7 +7968,7 @@
       "player_name": "Akram Afif",
       "xg": 0,
       "xa": 0.00005964,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -7968,7 +7976,7 @@
       "player_name": "Assim Madibo",
       "xg": 0,
       "xa": 0.00000356,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -7976,7 +7984,7 @@
       "player_name": "Edmilson Junior",
       "xg": 0.14088580012321,
       "xa": 0.00000447,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -7984,7 +7992,7 @@
       "player_name": "Derek Cornelius",
       "xg": 0,
       "xa": 0.00276004,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -7992,7 +8000,7 @@
       "player_name": "Richie Laryea",
       "xg": 0,
       "xa": 0.00457423,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -8000,7 +8008,7 @@
       "player_name": "Pedro Miguel",
       "xg": 0,
       "xa": 0.00000225,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -8008,7 +8016,7 @@
       "player_name": "Stephen Eustaquio",
       "xg": 0,
       "xa": 0.00653997,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -8016,7 +8024,7 @@
       "player_name": "Homam Al-Amin",
       "xg": 0,
       "xa": 0.040091,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -8024,7 +8032,7 @@
       "player_name": "Jonathan David",
       "xg": 0.046366766095161,
       "xa": 0.00481579,
-      "rating": null
+      "rating": 6.7
     },
     {
       "match_id": 15186798,
@@ -8032,7 +8040,7 @@
       "player_name": "Tajon Buchanan",
       "xg": 0,
       "xa": 0.0281331,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -8040,7 +8048,23 @@
       "player_name": "Alistair Johnston",
       "xg": 0,
       "xa": 0.00729812,
-      "rating": null
+      "rating": 6.5
+    },
+    {
+      "match_id": 15186798,
+      "player_id": 985156,
+      "player_name": "Yusuf Abdurisag",
+      "xg": 0,
+      "xa": 0,
+      "rating": 6.5
+    },
+    {
+      "match_id": 15186798,
+      "player_id": 1012458,
+      "player_name": "Mahmud Abunada",
+      "xg": 0,
+      "xa": 0,
+      "rating": 7.1
     },
     {
       "match_id": 15186798,
@@ -8048,7 +8072,7 @@
       "player_name": "Jassem Gaber Abdulsallam",
       "xg": 0,
       "xa": 0.00000149,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -8056,7 +8080,7 @@
       "player_name": "Ismael Koné",
       "xg": 0,
       "xa": 0.00235126,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -8064,7 +8088,7 @@
       "player_name": "Ayoub Al Oui",
       "xg": 0,
       "xa": 0.00000228,
-      "rating": null
+      "rating": 6.5
     },
     {
       "match_id": 15186798,
@@ -8072,7 +8096,7 @@
       "player_name": "Luc De Fougerolles",
       "xg": 0,
       "xa": 0.00283822,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -8080,7 +8104,7 @@
       "player_name": "Ali Ahmed",
       "xg": 0,
       "xa": 0.0339324,
-      "rating": null
+      "rating": 6.6
     },
     {
       "match_id": 15186798,
@@ -8088,7 +8112,7 @@
       "player_name": "Issa Laye",
       "xg": 0,
       "xa": 0.00023292,
-      "rating": null
+      "rating": 6.5
     }
   ],
   "players_info": [
