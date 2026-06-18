@@ -7349,7 +7349,7 @@
       "player_id": 118204,
       "player_name": "Jaroslav Zelený",
       "xg": 0,
-      "xa": 0.0480954,
+      "xa": 0.0481126,
       "rating": 6.7
     },
     {
@@ -7357,7 +7357,7 @@
       "player_id": 138024,
       "player_name": "Vladimír Coufal",
       "xg": 0,
-      "xa": 0.150569,
+      "xa": 0.171058,
       "rating": 6.9
     },
     {
@@ -7365,7 +7365,7 @@
       "player_id": 151440,
       "player_name": "Tomáš Holeš",
       "xg": 0,
-      "xa": 0.00544526,
+      "xa": 0.00546213,
       "rating": 6.6
     },
     {
@@ -7381,7 +7381,7 @@
       "player_id": 539792,
       "player_name": "Ronwen Williams",
       "xg": 0,
-      "xa": 0.00390773,
+      "xa": 0.00392326,
       "rating": 6.2
     },
     {
@@ -7389,7 +7389,7 @@
       "player_id": 799041,
       "player_name": "Tomáš Souček",
       "xg": 0,
-      "xa": 0.00002795,
+      "xa": 0.00004042,
       "rating": null
     },
     {
@@ -7405,7 +7405,7 @@
       "player_id": 837099,
       "player_name": "Aubrey Modiba",
       "xg": 0.028978825546801,
-      "xa": 0.102154,
+      "xa": 0.103294,
       "rating": 7
     },
     {
@@ -7413,7 +7413,7 @@
       "player_id": 856250,
       "player_name": "Ladislav Krejčí",
       "xg": 0.154699264094233,
-      "xa": 0.0626178,
+      "xa": 0.0626708,
       "rating": 7.5
     },
     {
@@ -7421,7 +7421,7 @@
       "player_id": 881117,
       "player_name": "Teboho Mokoena",
       "xg": 0.012109794653952,
-      "xa": 0.0904494,
+      "xa": 0.109083,
       "rating": 6.9
     },
     {
@@ -7429,7 +7429,7 @@
       "player_id": 927366,
       "player_name": "Matěj Kovář",
       "xg": 0,
-      "xa": 0.00006097,
+      "xa": 0.00014632,
       "rating": 6.3
     },
     {
@@ -7445,7 +7445,7 @@
       "player_id": 952114,
       "player_name": "Lukáš Červ",
       "xg": 0.029186436906457,
-      "xa": 0.00148728,
+      "xa": 0.0015702,
       "rating": 6.8
     },
     {
@@ -7453,7 +7453,7 @@
       "player_id": 957604,
       "player_name": "Pavel Šulc",
       "xg": 0,
-      "xa": 0.082201,
+      "xa": 0.0912706,
       "rating": 6.6
     },
     {
@@ -7461,8 +7461,8 @@
       "player_id": 957615,
       "player_name": "Robin Hranáč",
       "xg": 0,
-      "xa": 0.00134524,
-      "rating": 6.9
+      "xa": 0.00135187,
+      "rating": 7
     },
     {
       "match_id": 15186731,
@@ -7498,6 +7498,14 @@
     },
     {
       "match_id": 15186731,
+      "player_id": 1022170,
+      "player_name": "Evidence Makgopa",
+      "xg": 0.0272,
+      "xa": 0,
+      "rating": 6.7
+    },
+    {
+      "match_id": 15186731,
       "player_id": 1049669,
       "player_name": "Jayden Adams",
       "xg": 0,
@@ -7509,7 +7517,7 @@
       "player_id": 1179164,
       "player_name": "Thapelo Maseko",
       "xg": 0.128724690526726,
-      "xa": 0.0214104,
+      "xa": 0.0224535,
       "rating": 6.7
     },
     {
@@ -7525,7 +7533,7 @@
       "player_id": 1507710,
       "player_name": "Ime Okon",
       "xg": 0,
-      "xa": 0.00391012,
+      "xa": 0.00395469,
       "rating": 7
     },
     {
@@ -7533,7 +7541,7 @@
       "player_id": 1564998,
       "player_name": "Relebohile Mofokeng",
       "xg": 0,
-      "xa": 0.00561266,
+      "xa": 0.018368,
       "rating": 6.4
     },
     {
@@ -7541,7 +7549,7 @@
       "player_id": 2058228,
       "player_name": "Mbekezeli Mbokazi",
       "xg": 0.014701209962368,
-      "xa": 0.00437108,
+      "xa": 0.00437511,
       "rating": 6.6
     }
   ],
