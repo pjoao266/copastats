@@ -204,7 +204,7 @@
       "match_id": 15186806,
       "home": "Switzerland",
       "away": "Bosnia & Herzegovina",
-      "home_score": 0,
+      "home_score": 1,
       "away_score": 0,
       "status": "2nd half"
     }
@@ -1364,6 +1364,21 @@
       "is_home": true,
       "is_own_goal": false,
       "is_winning_goal": false
+    },
+    {
+      "match_id": 15186806,
+      "minute": "74",
+      "scorer_id": 1518931,
+      "scorer_name": "Johan Manzambi",
+      "assist_id": null,
+      "assist_name": null,
+      "goal_type": "Bola rolando",
+      "box_location": "Dentro da area",
+      "impact": "Lideranca",
+      "is_tie": false,
+      "is_home": true,
+      "is_own_goal": false,
+      "is_winning_goal": true
     }
   ],
   "player_match_stats": [
@@ -7612,7 +7627,7 @@
       "player_id": 67769,
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
-      "xa": 0.0336308,
+      "xa": 0.0337214,
       "rating": 6.9
     },
     {
@@ -7628,16 +7643,16 @@
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.0637638,
-      "rating": 7.4
+      "xa": 0.0637672,
+      "rating": 7.5
     },
     {
       "match_id": 15186806,
       "player_id": 142148,
       "player_name": "Sead Kolašinac",
       "xg": 0,
-      "xa": 0.00826497,
-      "rating": 6.3
+      "xa": 0.00828347,
+      "rating": 6.2
     },
     {
       "match_id": 15186806,
@@ -7652,7 +7667,7 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.0155557,
+      "xa": 0.0155566,
       "rating": 7
     },
     {
@@ -7660,8 +7675,8 @@
       "player_id": 283833,
       "player_name": "Ivan Šunjić",
       "xg": 0,
-      "xa": 0.00197632,
-      "rating": 6.5
+      "xa": 0.0019889,
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7669,7 +7684,7 @@
       "player_name": "Nikola Vasilj",
       "xg": 0,
       "xa": 0.00050912,
-      "rating": 7.3
+      "rating": 7.1
     },
     {
       "match_id": 15186806,
@@ -7684,24 +7699,24 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0170815,
-      "rating": 7.3
+      "xa": 0.017085,
+      "rating": 7.4
     },
     {
       "match_id": 15186806,
       "player_id": 556866,
       "player_name": "Gregor Kobel",
       "xg": 0,
-      "xa": 0.0001633,
-      "rating": 6.6
+      "xa": 0.00016452,
+      "rating": 6.5
     },
     {
       "match_id": 15186806,
       "player_id": 831488,
       "player_name": "Nikola Katić",
       "xg": 0,
-      "xa": 0.00072529,
-      "rating": 7.2
+      "xa": 0.00090407,
+      "rating": 6.9
     },
     {
       "match_id": 15186806,
@@ -7740,8 +7755,8 @@
       "player_id": 1049701,
       "player_name": "Ivan Bašić",
       "xg": 0,
-      "xa": 0.00323073,
-      "rating": 6.5
+      "xa": 0.00346019,
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7756,16 +7771,16 @@
       "player_id": 1102791,
       "player_name": "Amar Dedić",
       "xg": 0.015353715978563,
-      "xa": 0.00692476,
-      "rating": 6.7
+      "xa": 0.00699547,
+      "rating": 6.3
     },
     {
       "match_id": 15186806,
       "player_id": 1118177,
       "player_name": "Tarik Muharemović",
       "xg": 0,
-      "xa": 0.00135915,
-      "rating": 6.9
+      "xa": 0.00136331,
+      "rating": 6.7
     },
     {
       "match_id": 15186806,
@@ -7780,7 +7795,7 @@
       "player_id": 1136110,
       "player_name": "Esmir Bajraktarević",
       "xg": 0,
-      "xa": 0.0024384,
+      "xa": 0.00258916,
       "rating": 6.5
     },
     {
@@ -7789,7 +7804,15 @@
       "player_name": "Kerim Alajbegović",
       "xg": 0,
       "xa": 0.105994,
-      "rating": 6.4
+      "rating": 6.3
+    },
+    {
+      "match_id": 15186806,
+      "player_id": 1518931,
+      "player_name": "Johan Manzambi",
+      "xg": 0,
+      "xa": 0.0002938,
+      "rating": 6.6
     }
   ],
   "players_info": [
@@ -29580,6 +29603,11 @@
     {
       "player_id": "1144687",
       "player_name": "Nestory Irankunda",
+      "points": 3
+    },
+    {
+      "player_id": "1518931",
+      "player_name": "Johan Manzambi",
       "points": 3
     },
     {
