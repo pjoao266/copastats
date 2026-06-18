@@ -7779,7 +7779,7 @@
       "player_id": 1118177,
       "player_name": "Tarik Muharemović",
       "xg": 0,
-      "xa": 0.00136331,
+      "xa": 0.00137327,
       "rating": 6.7
     },
     {
@@ -7795,7 +7795,7 @@
       "player_id": 1136110,
       "player_name": "Esmir Bajraktarević",
       "xg": 0,
-      "xa": 0.00258916,
+      "xa": 0.00260608,
       "rating": 6.5
     },
     {
@@ -7810,9 +7810,9 @@
       "match_id": 15186806,
       "player_id": 1518931,
       "player_name": "Johan Manzambi",
-      "xg": 0,
+      "xg": 0.063893683254719,
       "xa": 0.0002938,
-      "rating": 6.6
+      "rating": 7.6
     }
   ],
   "players_info": [
