@@ -7604,7 +7604,7 @@
       "player_id": 14990,
       "player_name": "Edin Džeko",
       "xg": 0.044736918061972,
-      "xa": 0.00039721,
+      "xa": 0.00039736,
       "rating": 6.5
     },
     {
@@ -7620,16 +7620,16 @@
       "player_id": 115516,
       "player_name": "Remo Freuler",
       "xg": 0,
-      "xa": 0.0101167,
-      "rating": 6.5
+      "xa": 0.0103511,
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.00199461,
-      "rating": 6.5
+      "xa": 0.0162111,
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7652,7 +7652,7 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.00268648,
+      "xa": 0.0041604,
       "rating": 6.6
     },
     {
@@ -7661,7 +7661,7 @@
       "player_name": "Ivan Šunjić",
       "xg": 0,
       "xa": 0.00000838,
-      "rating": 6.5
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7684,7 +7684,7 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.00095703,
+      "xa": 0.0027598,
       "rating": 6.7
     },
     {
@@ -7701,14 +7701,14 @@
       "player_name": "Nikola Katić",
       "xg": 0,
       "xa": 0.00000241,
-      "rating": 6.4
+      "rating": 6.5
     },
     {
       "match_id": 15186806,
       "player_id": 850891,
       "player_name": "Michel Aebischer",
       "xg": 0,
-      "xa": 0.00121036,
+      "xa": 0.00303367,
       "rating": 6.4
     },
     {
@@ -7731,7 +7731,7 @@
       "match_id": 15186806,
       "player_id": 944327,
       "player_name": "Dan Ndoye",
-      "xg": 0,
+      "xg": 0.0525,
       "xa": 0.00157004,
       "rating": 6.5
     },
@@ -7741,7 +7741,7 @@
       "player_name": "Benjamin Tahirović",
       "xg": 0,
       "xa": 0.00004282,
-      "rating": 6.4
+      "rating": 6.5
     },
     {
       "match_id": 15186806,
