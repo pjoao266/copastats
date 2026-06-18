@@ -7672,7 +7672,7 @@
       "player_id": 67769,
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
-      "xa": 0.0378571,
+      "xa": 0.0378715,
       "rating": 6.5
     },
     {
@@ -7688,7 +7688,7 @@
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.0732854,
+      "xa": 0.0733041,
       "rating": 7.6
     },
     {
@@ -7712,7 +7712,7 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.0209945,
+      "xa": 0.0210077,
       "rating": 6.8
     },
     {
@@ -7733,6 +7733,14 @@
     },
     {
       "match_id": 15186806,
+      "player_id": 352290,
+      "player_name": "Cédric Itten",
+      "xg": 0,
+      "xa": 0.00002963,
+      "rating": null
+    },
+    {
+      "match_id": 15186806,
       "player_id": 352296,
       "player_name": "Breel Embolo",
       "xg": 0.1364681571722,
@@ -7744,7 +7752,7 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0249309,
+      "xa": 0.0249448,
       "rating": 7.6
     },
     {
@@ -7752,8 +7760,8 @@
       "player_id": 556866,
       "player_name": "Gregor Kobel",
       "xg": 0,
-      "xa": 0.00017944,
-      "rating": 5.8
+      "xa": 0.00018042,
+      "rating": 6.1
     },
     {
       "match_id": 15186806,
@@ -7761,7 +7769,7 @@
       "player_name": "Amir Hadžiahmetović",
       "xg": 0,
       "xa": 0.00017257,
-      "rating": null
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7809,7 +7817,7 @@
       "player_name": "Jovo Lukić",
       "xg": 0,
       "xa": 0.00005865,
-      "rating": null
+      "rating": 6.4
     },
     {
       "match_id": 15186806,
@@ -7857,15 +7865,15 @@
       "player_name": "Tarik Muharemović",
       "xg": 0,
       "xa": 0.0013943,
-      "rating": 6.3
+      "rating": 6.2
     },
     {
       "match_id": 15186806,
       "player_id": 1127823,
       "player_name": "Luca Jaquez",
       "xg": 0,
-      "xa": 0.00548246,
-      "rating": null
+      "xa": 0.00550626,
+      "rating": 6.2
     },
     {
       "match_id": 15186806,
@@ -7887,9 +7895,9 @@
       "match_id": 15186806,
       "player_id": 1149353,
       "player_name": "Ermin Mahmić",
-      "xg": 0,
+      "xg": 0.043313704431057,
       "xa": 0,
-      "rating": 7.1
+      "rating": 7.6
     },
     {
       "match_id": 15186806,
@@ -7904,7 +7912,7 @@
       "player_id": 1518931,
       "player_name": "Johan Manzambi",
       "xg": 0.508894361555579,
-      "xa": 0.0155171,
+      "xa": 0.0155234,
       "rating": 8.4
     }
   ],
