@@ -21,29 +21,16 @@ const TOURNAMENT_ID = 16;
 const SEASON_ID = 58210;
 
 async function fetchJson(url) {
-    try {
-        console.log(`[Requisitando] -> ${url}`);
-        const response = await gotScraping({
-            url: url,
-            headers: HEADERS,
-            responseType: 'json'
-        });
-        return response.body;
-    } catch (error) {
-        console.error(`\n❌ ERRO FATAL NA REQUISIÇÃO: ${url}`);
-        
-        // Verifica se o erro veio da rede/bloqueio (ex: 403 Forbidden)
-        if (error.response) {
-            console.error(`Status: ${error.response.statusCode}`);
-            console.error(`Corpo devolvido pelo Sofascore:`, error.response.body);
-        } else {
-            console.error(`Erro de execução:`, error.message);
-        }
-        
-        // Em vez de "engolir" o erro retornando null/vazio, nós forçamos o script a quebrar 
-        // para o Apify marcar a rodada como "Failed" e a gente ler o log.
-        throw error; 
-    }
+    // Tenta ler o proxy configurado no GitHub Actions. Se não houver, roda sem proxy (local)
+    const proxyUrl = process.env.PROXY_URL || undefined;
+
+    const response = await gotScraping({
+        url: url,
+        headers: HEADERS,
+        responseType: 'json',
+        proxyUrl: proxyUrl // <--- O got-scraping usa o proxy através desta propriedade
+    });
+    return response.body;
 }
 
 function calculateAge(timestamp) {
@@ -436,8 +423,9 @@ export async function runScraper() {
     return fullData;
 }
 
-// Se o arquivo for executado diretamente pelo Node, roda o scraper.
-import { fileURLToPath } from 'url';
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-    runScraper().catch(console.error);
+try {
+    // Roda a extração usando a rede de proxies configurada
+    const dadosFinais = await runScraper();  
+} catch (error) {
+    console.error("Ocorreu um erro durante a execução do script:", error);
 }
