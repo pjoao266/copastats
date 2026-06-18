@@ -14,15 +14,7 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Endpoint para fornecer os dados já cacheados (JSON)
-app.get('/api/data', async (req, res) => {
-    try {
-        const jsonPath = path.join(__dirname, '..', 'dados', 'copa_2026_dados.json');
-        const raw = await fs.readFile(jsonPath, 'utf-8');
-        res.json(JSON.parse(raw));
-    } catch (e) {
-        res.status(404).json({ error: 'Dados não encontrados. O scraper pode estar rodando ainda.' });
-    }
-});
+app.get('/api/data', async (req, res) => {  })
 
 // Endpoint para forçar a rodar o scraper manualmente, se necessário
 app.post('/api/sync', async (req, res) => {

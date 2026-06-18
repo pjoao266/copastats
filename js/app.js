@@ -87,7 +87,7 @@ function formatPlayerName(info) {
     async function fetchData() {
         badge.style.display = 'inline-block';
         try {
-            const res = await fetch('/api/data');
+            const res = await fetch('dados/copa_2026_dados.json');
             if(res.ok) {
                 appData = await res.json();
                 badge.style.display = 'none';
