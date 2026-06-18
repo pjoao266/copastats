@@ -1,14 +1,6 @@
 {
   "matches": [
     {
-      "match_id": 15186710,
-      "home": "Mexico",
-      "away": "South Africa",
-      "home_score": 2,
-      "away_score": 0,
-      "status": "Ended"
-    },
-    {
       "match_id": 15186720,
       "home": "South Korea",
       "away": "Czechia",
@@ -202,36 +194,6 @@
     }
   ],
   "goals": [
-    {
-      "match_id": 15186710,
-      "minute": "9",
-      "scorer_id": 843114,
-      "scorer_name": "Julián Quiñones",
-      "assist_id": 944068,
-      "assist_name": "Erik Lira",
-      "goal_type": "Bola rolando",
-      "box_location": "Dentro da area",
-      "impact": "Lideranca",
-      "is_tie": false,
-      "is_home": true,
-      "is_own_goal": false,
-      "is_winning_goal": true
-    },
-    {
-      "match_id": 15186710,
-      "minute": "67",
-      "scorer_id": 192442,
-      "scorer_name": "Raúl Jiménez",
-      "assist_id": 865500,
-      "assist_name": "Roberto Alvarado",
-      "goal_type": "Bola rolando",
-      "box_location": "Dentro da area",
-      "impact": "Ampliar",
-      "is_tie": false,
-      "is_home": true,
-      "is_own_goal": false,
-      "is_winning_goal": false
-    },
     {
       "match_id": 15186720,
       "minute": "59",
