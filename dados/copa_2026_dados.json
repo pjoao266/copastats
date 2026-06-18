@@ -7613,7 +7613,7 @@
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
       "xa": 0.0295338,
-      "rating": 6.8
+      "rating": 6.9
     },
     {
       "match_id": 15186806,
@@ -7629,7 +7629,7 @@
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
       "xa": 0.0530694,
-      "rating": 7.3
+      "rating": 7.4
     },
     {
       "match_id": 15186806,
@@ -7637,7 +7637,7 @@
       "player_name": "Sead Kolašinac",
       "xg": 0,
       "xa": 0.00313409,
-      "rating": 6.2
+      "rating": 6.3
     },
     {
       "match_id": 15186806,
@@ -7653,7 +7653,7 @@
       "player_name": "Nico Elvedi",
       "xg": 0,
       "xa": 0.0155157,
-      "rating": 6.9
+      "rating": 7
     },
     {
       "match_id": 15186806,
@@ -7669,7 +7669,7 @@
       "player_name": "Nikola Vasilj",
       "xg": 0,
       "xa": 0.00046919,
-      "rating": 6.4
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7701,7 +7701,7 @@
       "player_name": "Nikola Katić",
       "xg": 0,
       "xa": 0.00033289,
-      "rating": 6.9
+      "rating": 7
     },
     {
       "match_id": 15186806,
@@ -7731,7 +7731,7 @@
       "match_id": 15186806,
       "player_id": 944327,
       "player_name": "Dan Ndoye",
-      "xg": 0.070699513407052,
+      "xg": 0.0491645289585,
       "xa": 0.00902045,
       "rating": 6.3
     },
@@ -7765,7 +7765,7 @@
       "player_name": "Amar Memić",
       "xg": 0.015491207130253,
       "xa": 0.00456087,
-      "rating": 6.7
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7773,7 +7773,7 @@
       "player_name": "Kerim Alajbegović",
       "xg": 0,
       "xa": 0.104795,
-      "rating": 6.5
+      "rating": 6.4
     }
   ],
   "players_info": [
