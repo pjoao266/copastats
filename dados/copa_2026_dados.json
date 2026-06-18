@@ -206,7 +206,7 @@
       "away": "Bosnia & Herzegovina",
       "home_score": 0,
       "away_score": 0,
-      "status": "1st half"
+      "status": "Halftime"
     }
   ],
   "goals": [
@@ -7612,15 +7612,15 @@
       "player_id": 67769,
       "player_name": "Ricardo Rodríguez",
       "xg": 0,
-      "xa": 0.0162982,
-      "rating": 6.6
+      "xa": 0.0173379,
+      "rating": 6.7
     },
     {
       "match_id": 15186806,
       "player_id": 115516,
       "player_name": "Remo Freuler",
       "xg": 0.015920124948025,
-      "xa": 0.0519571,
+      "xa": 0.0534411,
       "rating": 7.2
     },
     {
@@ -7628,15 +7628,15 @@
       "player_id": 117777,
       "player_name": "Granit Xhaka",
       "xg": 0.013619099743664,
-      "xa": 0.0488947,
-      "rating": 7.2
+      "xa": 0.0516595,
+      "rating": 7.3
     },
     {
       "match_id": 15186806,
       "player_id": 142148,
       "player_name": "Sead Kolašinac",
       "xg": 0,
-      "xa": 0.00209796,
+      "xa": 0.00211183,
       "rating": 6.1
     },
     {
@@ -7652,7 +7652,7 @@
       "player_id": 282229,
       "player_name": "Nico Elvedi",
       "xg": 0,
-      "xa": 0.0142328,
+      "xa": 0.0152481,
       "rating": 6.9
     },
     {
@@ -7668,7 +7668,7 @@
       "player_id": 325061,
       "player_name": "Nikola Vasilj",
       "xg": 0,
-      "xa": 0.00046778,
+      "xa": 0.00064982,
       "rating": 6.5
     },
     {
@@ -7684,7 +7684,7 @@
       "player_id": 383560,
       "player_name": "Manuel Akanji",
       "xg": 0,
-      "xa": 0.0137137,
+      "xa": 0.0138337,
       "rating": 7
     },
     {
@@ -7692,8 +7692,8 @@
       "player_id": 556866,
       "player_name": "Gregor Kobel",
       "xg": 0,
-      "xa": 0.00015078,
-      "rating": 6.5
+      "xa": 0.00015675,
+      "rating": 6.6
     },
     {
       "match_id": 15186806,
@@ -7701,14 +7701,14 @@
       "player_name": "Nikola Katić",
       "xg": 0,
       "xa": 0.0003255,
-      "rating": 6.7
+      "rating": 6.8
     },
     {
       "match_id": 15186806,
       "player_id": 850891,
       "player_name": "Michel Aebischer",
       "xg": 0,
-      "xa": 0.0187725,
+      "xa": 0.0191504,
       "rating": 6.7
     },
     {
@@ -7724,7 +7724,7 @@
       "player_id": 929620,
       "player_name": "Fabian Rieder",
       "xg": 0,
-      "xa": 0.0247095,
+      "xa": 0.0307044,
       "rating": 6.9
     },
     {
@@ -7733,7 +7733,7 @@
       "player_name": "Dan Ndoye",
       "xg": 0.034799513407052,
       "xa": 0.00902045,
-      "rating": 6.4
+      "rating": 6.3
     },
     {
       "match_id": 15186806,
@@ -7748,7 +7748,7 @@
       "player_id": 1102791,
       "player_name": "Amar Dedić",
       "xg": 0,
-      "xa": 0.00517625,
+      "xa": 0.00517642,
       "rating": 6.6
     },
     {
@@ -7757,7 +7757,7 @@
       "player_name": "Tarik Muharemović",
       "xg": 0,
       "xa": 0.00068682,
-      "rating": 6.6
+      "rating": 6.7
     },
     {
       "match_id": 15186806,
