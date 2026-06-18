@@ -49,6 +49,31 @@ function formatMinute(time, addedTime) {
     return String(time);
 }
 
+function classificarPorHeuristica(nominal, x, y) {
+    if (nominal === 'G') return 'GL';
+    if (x == null || y == null) return nominal;
+
+    if (nominal === 'D') {
+        if (y <= 30) return 'LD';
+        if (y >= 70) return 'LE';
+        return 'ZAG';
+    }
+    if (nominal === 'M') {
+        if (y <= 25) return 'MD';
+        if (y >= 75) return 'ME';
+        // Centralizados:
+        if (x <= 45) return 'VOL';
+        if (x <= 60) return 'MC';
+        return 'MEI';
+    }
+    if (nominal === 'F') {
+        if (y <= 33) return 'PD';
+        if (y >= 67) return 'PE';
+        return 'CA';
+    }
+    return nominal;
+}
+
 async function getMatches() {
     let page = 0;
     const validMatches = [];
@@ -114,6 +139,7 @@ async function fetchPlayerInfo(playerId) {
 
 async function processMatch(match, playersCache) {
     const matchId = match.match_id;
+    const isEnded = match.status === 'Ended';
     const matchGoals = [];
     const playerMatchStats = {};
 
@@ -129,147 +155,171 @@ async function processMatch(match, playersCache) {
         const pId = shot.player?.id;
         if (pId) {
             if (!playerMatchStats[pId]) {
-                playerMatchStats[pId] = { match_id: matchId, player_id: pId, player_name: shot.player?.name, xg: 0.0, xa: 0.0, rating: null };
+                playerMatchStats[pId] = { 
+                    match_id: matchId, player_id: pId, player_name: shot.player?.name, 
+                    xg: 0.0, xa: 0.0, rating: null, nominal_position: null, detailed_position: null, 
+                    formation: null, is_starter: false, average_x: null, average_y: null 
+                };
             }
-            if (shot.xg !== undefined) {
-                playerMatchStats[pId].xg += shot.xg;
-            }
-            if (shot.shotType === 'goal') {
-                shotsByTimePlayer[`${shot.time}_${pId}`] = shot;
-            }
+            if (shot.xg !== undefined) playerMatchStats[pId].xg += shot.xg;
+            if (shot.shotType === 'goal') shotsByTimePlayer[`${shot.time}_${pId}`] = shot;
         }
     }
 
-    // 2. INCIDENTS
+    // 2. INCIDENTS (Gols)
     let incidentsData = [];
     try {
         const incData = await fetchJson(`https://api.sofascore.com/api/v1/event/${matchId}/incidents`);
         incidentsData = incData.incidents || [];
     } catch (e) {}
 
-    const goalIncidents = incidentsData.filter(inc => inc.incidentType === 'goal');
-    goalIncidents.sort((a, b) => (a.time || 0) - (b.time || 0));
-
-    let homeScoreTracked = 0;
-    let awayScoreTracked = 0;
-    const homeGoalsList = [];
-    const awayGoalsList = [];
+    const goalIncidents = incidentsData.filter(inc => inc.incidentType === 'goal').sort((a, b) => (a.time || 0) - (b.time || 0));
+    let homeScoreTracked = 0, awayScoreTracked = 0;
+    const homeGoalsList = [], awayGoalsList = [];
 
     for (const inc of goalIncidents) {
-        const time = inc.time;
-        const added = inc.addedTime;
-        const minuteStr = formatMinute(time, added);
-
-        const jogadorGol = inc.player || {};
-        const jogadorAssist = inc.assist1 || {};
-        const scorerId = jogadorGol.id;
-
+        const time = inc.time, added = inc.addedTime;
+        const scorerId = inc.player?.id;
         const isHome = inc.isHome !== false;
-        const isOwnGoal = inc.incidentClass === 'ownGoal';
-
-        const scorerTeamPrev = isHome ? homeScoreTracked : awayScoreTracked;
-        const concedingTeamPrev = isHome ? awayScoreTracked : homeScoreTracked;
-
-        if (isHome) homeScoreTracked++;
-        else awayScoreTracked++;
-
-        const scorerTeamGoals = isHome ? homeScoreTracked : awayScoreTracked;
-        const concedingTeamGoals = isHome ? awayScoreTracked : homeScoreTracked;
-
+        
         let impact = "";
         let isTie = false;
-
-        if (scorerTeamPrev === concedingTeamPrev) {
-            impact = "Lideranca";
-        } else if (scorerTeamGoals === concedingTeamGoals) {
-            impact = "Empate";
-            isTie = true;
-        } else if (scorerTeamPrev > concedingTeamPrev) {
-            impact = "Ampliar";
-        } else {
-            impact = "Diminuir";
-        }
+        if (isHome) homeScoreTracked++; else awayScoreTracked++;
 
         const shotMatch = shotsByTimePlayer[`${time}_${scorerId}`];
-        let goalType = "Bola rolando";
-        let boxLocation = "Dentro da area";
-
+        let goalType = "Bola rolando", boxLocation = "Dentro da area";
         if (shotMatch) {
             const situation = shotMatch.situation || '';
-            if (situation === 'penalty' || inc.incidentClass === 'penalty') {
-                goalType = "Penalti";
-            } else if (situation === 'free-kick') {
-                goalType = "Falta";
-            }
-            const xCoord = shotMatch.playerCoordinates?.x || 0;
-            if (xCoord > 16.5) boxLocation = "Fora da area";
+            if (situation === 'penalty' || inc.incidentClass === 'penalty') goalType = "Penalti";
+            else if (situation === 'free-kick') goalType = "Falta";
+            if ((shotMatch.playerCoordinates?.x || 0) > 16.5) boxLocation = "Fora da area";
         } else {
             if (inc.incidentClass === 'penalty') goalType = "Penalti";
-            else if (isOwnGoal) goalType = "Gol contra";
+            else if (inc.incidentClass === 'ownGoal') goalType = "Gol contra";
         }
 
         const golInfo = {
-            match_id: matchId,
-            minute: minuteStr,
-            scorer_id: scorerId || null,
-            scorer_name: jogadorGol.name || null,
-            assist_id: jogadorAssist.id || null,
-            assist_name: jogadorAssist.name || null,
-            goal_type: goalType,
-            box_location: boxLocation,
-            impact: impact,
-            is_tie: isTie,
-            is_home: isHome,
-            is_own_goal: isOwnGoal
+            match_id: matchId, minute: formatMinute(time, added), scorer_id: scorerId || null,
+            scorer_name: inc.player?.name || null, assist_id: inc.assist1?.id || null, goal_type: goalType,
+            box_location: boxLocation, is_home: isHome, is_own_goal: inc.incidentClass === 'ownGoal'
         };
-
         matchGoals.push(golInfo);
-        if (isHome) homeGoalsList.push(golInfo);
-        else awayGoalsList.push(golInfo);
+        if (isHome) homeGoalsList.push(golInfo); else awayGoalsList.push(golInfo);
     }
 
-    let winner = null;
-    let winningGoalIndex = -1;
-    if (homeScoreTracked > awayScoreTracked) {
-        winner = 'home';
-        winningGoalIndex = awayScoreTracked;
-    } else if (awayScoreTracked > homeScoreTracked) {
-        winner = 'away';
-        winningGoalIndex = homeScoreTracked;
+    let winner = null, winningGoalIndex = -1;
+    if (homeScoreTracked > awayScoreTracked) { winner = 'home'; winningGoalIndex = awayScoreTracked; }
+    else if (awayScoreTracked > homeScoreTracked) { winner = 'away'; winningGoalIndex = homeScoreTracked; }
+
+    homeGoalsList.forEach((g, i) => g.is_winning_goal = (winner === 'home' && i === winningGoalIndex));
+    awayGoalsList.forEach((g, i) => g.is_winning_goal = (winner === 'away' && i === winningGoalIndex));
+
+    // 3. AVERAGE POSITIONS
+    let avgPosMap = {};
+    if (isEnded) {
+        try {
+            const avgPosData = await fetchJson(`https://api.sofascore.com/api/v1/event/${matchId}/average-positions`);
+            for (const pos of [...(avgPosData.home || []), ...(avgPosData.away || [])]) {
+                if (pos.player?.id) avgPosMap[pos.player.id] = { x: pos.averageX, y: pos.averageY };
+            }
+        } catch (e) {}
     }
 
-    for (let i = 0; i < homeGoalsList.length; i++) {
-        homeGoalsList[i].is_winning_goal = (winner === 'home' && i === winningGoalIndex);
-    }
-    for (let i = 0; i < awayGoalsList.length; i++) {
-        awayGoalsList[i].is_winning_goal = (winner === 'away' && i === winningGoalIndex);
-    }
-
-    // 3. LINEUPS
+    // 4. LINEUPS & ESTATÍSTICAS
     try {
         const lineupsData = await fetchJson(`https://api.sofascore.com/api/v1/event/${matchId}/lineups`);
-        const allPlayers = (lineupsData.home?.players || []).concat(lineupsData.away?.players || []);
+        
+        const processTeamLineup = (playersList, formation) => {
+            if (!playersList) return;
 
-        for (const p of allPlayers) {
-            const pId = p.player?.id;
-            const pName = p.player?.name;
-            const xa = p.statistics?.expectedAssists || 0.0;
-            const rating = p.statistics?.rating || null; // Capturar a nota
-
-            if (pId) {
+            // Inicializar/Extrair Base Stats
+            playersList.forEach(p => {
+                const pId = p.player?.id;
+                if (!pId) return;
+                
+                const pos = p.position || p.player?.position || null;
+                const isStarter = !p.substitute;
+                
                 if (!playerMatchStats[pId]) {
-                    playerMatchStats[pId] = { match_id: matchId, player_id: pId, player_name: pName, xg: 0.0, xa: 0.0, rating: null };
+                    playerMatchStats[pId] = { 
+                        match_id: matchId, player_id: pId, player_name: p.player?.name, 
+                        xg: 0.0, xa: 0.0, rating: null, nominal_position: null, detailed_position: null, 
+                        formation: null, is_starter: false, average_x: null, average_y: null 
+                    };
                 }
-                playerMatchStats[pId].xa = xa;
-                if (rating !== null) {
-                    playerMatchStats[pId].rating = rating;
+                
+                playerMatchStats[pId].xa = p.statistics?.expectedAssists || 0.0;
+                playerMatchStats[pId].rating = p.statistics?.rating || null;
+                playerMatchStats[pId].nominal_position = pos;
+                playerMatchStats[pId].is_starter = isStarter;
+                playerMatchStats[pId].formation = formation;
+                
+                if (avgPosMap[pId]) {
+                    playerMatchStats[pId].average_x = avgPosMap[pId].x;
+                    playerMatchStats[pId].average_y = avgPosMap[pId].y;
                 }
+            });
+
+            // LÓGICA RÍGIDA PARA TITULARES DA EQUIPA
+            const starters = playersList.filter(p => !p.substitute).map(p => playerMatchStats[p.player.id]).filter(p => p);
+            
+            // Agrupar titulares por linha nominal
+            const startersG = starters.filter(p => p.nominal_position === 'G');
+            const startersD = starters.filter(p => p.nominal_position === 'D').sort((a,b) => (a.average_y || 50) - (b.average_y || 50));
+            const startersM = starters.filter(p => p.nominal_position === 'M');
+            const startersF = starters.filter(p => p.nominal_position === 'F').sort((a,b) => (a.average_y || 50) - (b.average_y || 50));
+
+            // Atribuir Goleiro
+            startersG.forEach(p => p.detailed_position = 'GL');
+
+            // Atribuir Defensores (Regra de Formação)
+            if (startersD.length === 4) {
+                startersD[0].detailed_position = 'LD';
+                startersD[1].detailed_position = 'ZAG';
+                startersD[2].detailed_position = 'ZAG';
+                startersD[3].detailed_position = 'LE';
+            } else if (startersD.length === 3) {
+                startersD.forEach(p => p.detailed_position = 'ZAG'); // Ex: 3-5-2
+            } else if (startersD.length === 5) {
+                startersD[0].detailed_position = 'LD';
+                startersD[1].detailed_position = 'ZAG';
+                startersD[2].detailed_position = 'ZAG';
+                startersD[3].detailed_position = 'ZAG';
+                startersD[4].detailed_position = 'LE';
+            } else {
+                startersD.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
             }
-        }
+
+            // Atribuir Meias (A heurística lida perfeitamente com VOL/MC/MEI/MD/ME através do X e Y)
+            startersM.forEach(p => p.detailed_position = classificarPorHeuristica('M', p.average_x, p.average_y));
+
+            // Atribuir Atacantes
+            if (startersF.length === 3) {
+                startersF[0].detailed_position = 'PD';
+                startersF[1].detailed_position = 'CA';
+                startersF[2].detailed_position = 'PE';
+            } else if (startersF.length === 2) {
+                startersF.forEach(p => p.detailed_position = 'CA');
+            } else if (startersF.length === 1) {
+                startersF[0].detailed_position = 'CA';
+            } else {
+                startersF.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
+            }
+
+            // LÓGICA PARA RESERVAS (Usa heurística baseada no mapa de calor/movimento)
+            const subs = playersList.filter(p => p.substitute).map(p => playerMatchStats[p.player.id]).filter(p => p);
+            subs.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
+        };
+
+        processTeamLineup(lineupsData.home?.players, lineupsData.home?.formation);
+        processTeamLineup(lineupsData.away?.players, lineupsData.away?.formation);
+
     } catch (e) {}
 
-    // Filtrar quem tem xg, xa ou nota (rating)
-    const statsList = Object.values(playerMatchStats).filter(s => s.xg > 0 || s.xa > 0 || s.rating !== null);
+    const statsList = Object.values(playerMatchStats).filter(s => 
+        s.xg > 0 || s.xa > 0 || s.rating !== null || s.average_x !== null
+    );
+    
     return { matchGoals, statsList };
 }
 

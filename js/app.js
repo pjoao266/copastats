@@ -108,9 +108,32 @@ function obterImagemSegura(urlSofascore) {
         }
     }
 
+    let countriesPopulated = false;
+
+    function populateCountries(data) {
+        if (countriesPopulated) return;
+        const countryFilter = document.getElementById('ranking-countries-filter');
+        if (!countryFilter) return;
+
+        const countries = new Set();
+        data.players_info.forEach(p => {
+            if (p.country.name) countries.add(p.country.name);
+        });
+
+        const sortedcountries = Array.from(countries).sort();
+        sortedcountries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            countryFilter.appendChild(option);
+        });
+        countriesPopulated = true;
+    }
+
     function renderAll() {
         renderBingo(appData);
         renderStats(appData);
+        populateCountries(appData);
         renderRanking(appData);
     }
 
@@ -504,8 +527,21 @@ function obterImagemSegura(urlSofascore) {
         return null;
     }
 
+    const countryFilterEl = document.getElementById('ranking-countries-filter');
+    if (countryFilterEl) {
+    countryFilterEl.addEventListener('change', () => { if (appData) renderRanking(appData); });
+    }
+
+    const searchInputEl = document.getElementById('ranking-search');
+    if (searchInputEl) {
+        searchInputEl.addEventListener('input', () => { if (appData) renderRanking(appData); });
+    }
+
     // --- RANKING LOGIC ---
     function renderRanking(data) {
+        const selectedCountry = document.getElementById('ranking-countries-filter')?.value || '';
+        const searchQuery = document.getElementById('ranking-search')?.value.trim().toLowerCase() || '';
+        console.log(selectedCountry);
         const playersMap = {};
         data.players_info.forEach(p => { playersMap[p.player_id] = p; });
 
@@ -535,16 +571,41 @@ function obterImagemSegura(urlSofascore) {
             }
         });
 
-        const playerList = Object.values(pStats).map(ps => {
+        let playerList = Object.values(pStats).map(ps => {
             ps.avgRating = ps.ratings.length > 0 ? ps.ratings.reduce((a,b)=>a+b,0)/ps.ratings.length : 0;
             return ps;
         });
+        // Aplica filtro de país se selecionado (assume opção "Todos" ou string vazia -> sem filtro)
+        if (selectedCountry && selectedCountry !== 'Todos') {
+            playerList = playerList.filter(ps => (ps.info.country?.name || '') === selectedCountry);
+        }
+
+        if (searchQuery) {
+            playerList = playerList.filter(ps => {
+                const playerName = (ps.info.name || '').toLowerCase();
+                return playerName.includes(searchQuery)
+            });
+        }
         
+        // Função auxiliar para renderizar os grids e evitar código duplicado no "Empty State"
+        const renderGrid = (gridId, list, mapFunction) => {
+            const grid = document.getElementById(gridId);
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fa-solid fa-user-slash mb-3 text-secondary" style="font-size: 3rem; opacity: 0.5;"></i>
+                        <h5 class="text-muted fw-bold">Nenhum jogador encontrado</h5>
+                        <p class="text-secondary small">Tente ajustar os filtros ou a pesquisa.</p>
+                    </div>
+                `;
+            } else {
+                grid.innerHTML = list.slice(0, 50).map(mapFunction).join('');
+            }
+        };
+
         // 1. Pontos Gerados (MVP) Ranking
         const pointsMap = {};
-        data.player_points.forEach(pp => {
-            pointsMap[pp.player_id] = pp.points;
-        });
+        data.player_points.forEach(pp => { pointsMap[pp.player_id] = pp.points; });
 
         const mvpList = [...playerList].filter(ps => pointsMap[ps.id] > 0);
         mvpList.sort((a,b) => {
@@ -554,37 +615,30 @@ function obterImagemSegura(urlSofascore) {
             return b.avgRating - a.avgRating;
         });
         
-        const mvpGrid = document.getElementById('ranking-grid');
-        mvpGrid.innerHTML = '';
-        if(mvpList.length === 0) {
-            mvpGrid.innerHTML = '<div class="col-12 text-center text-muted">Nenhum jogador pontuou ainda.</div>';
-        } else {
-            mvpList.slice(0, 50).forEach((ps, index) => {
-                const pts = pointsMap[ps.id];
-                mvpGrid.innerHTML += generateCardHtml(ps, index, `${pts} pts`, `<i class="fa-solid fa-star text-warning" style="font-size:0.9em;"></i> ${ps.avgRating.toFixed(2)}`);
-            });
-        }
-
+        renderGrid('ranking-grid', mvpList, (ps, i) => {
+            const pts = pointsMap[ps.id];
+            return generateCardHtml(ps, i, `${pts} pts`, `<i class="fa-solid fa-star text-warning" style="font-size:0.9em;"></i> ${ps.avgRating.toFixed(2)}`);
+        });
 
         // 2. Goals Ranking
         const golsList = [...playerList].filter(ps => ps.goals > 0).sort((a,b) => b.goals - a.goals || b.avgRating - a.avgRating);
-        document.getElementById('ranking-gols-grid').innerHTML = golsList.slice(0, 50).map((ps, i) => generateCardHtml(ps, i, `${ps.goals} Gols`)).join('');
+        renderGrid('ranking-gols-grid', golsList, (ps, i) => generateCardHtml(ps, i, `${ps.goals} Gols`));
 
         // 3. Assists Ranking
         const astList = [...playerList].filter(ps => ps.assists > 0).sort((a,b) => b.assists - a.assists || b.avgRating - a.avgRating);
-        document.getElementById('ranking-assists-grid').innerHTML = astList.slice(0, 50).map((ps, i) => generateCardHtml(ps, i, `${ps.assists} Assists`)).join('');
+        renderGrid('ranking-assists-grid', astList, (ps, i) => generateCardHtml(ps, i, `${ps.assists} Assists`));
 
         // 4. xG Ranking
         const xgList = [...playerList].filter(ps => ps.xg > 0).sort((a,b) => b.xg - a.xg || b.avgRating - a.avgRating);
-        document.getElementById('ranking-xg-grid').innerHTML = xgList.slice(0, 50).map((ps, i) => generateCardHtml(ps, i, `${ps.xg.toFixed(2)} xG`)).join('');
+        renderGrid('ranking-xg-grid', xgList, (ps, i) => generateCardHtml(ps, i, `${ps.xg.toFixed(2)} xG`));
 
         // 5. xAst Ranking
         const xaList = [...playerList].filter(ps => ps.xa > 0).sort((a,b) => b.xa - a.xa || b.avgRating - a.avgRating);
-        document.getElementById('ranking-xa-grid').innerHTML = xaList.slice(0, 50).map((ps, i) => generateCardHtml(ps, i, `${ps.xa.toFixed(2)} xAst`)).join('');
+        renderGrid('ranking-xa-grid', xaList, (ps, i) => generateCardHtml(ps, i, `${ps.xa.toFixed(2)} xAst`));
         
         // 6. Média de Notas Ranking
         const ratingList = [...playerList].filter(ps => ps.avgRating > 0).sort((a,b) => b.avgRating - a.avgRating);
-        document.getElementById('ranking-rating-grid').innerHTML = ratingList.slice(0, 50).map((ps, i) => generateCardHtml(ps, i, `${ps.avgRating.toFixed(2)}`)).join('');
+        renderGrid('ranking-rating-grid', ratingList, (ps, i) => generateCardHtml(ps, i, `${ps.avgRating.toFixed(2)}`));
     }
 
     function generateCardHtml(ps, index, mainStat, subTextHtml = '') {
