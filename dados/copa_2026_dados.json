@@ -198,7 +198,7 @@
       "away": "South Africa",
       "home_score": 1,
       "away_score": 0,
-      "status": "1st half"
+      "status": "Halftime"
     }
   ],
   "goals": [
@@ -7341,8 +7341,8 @@
       "player_id": 109002,
       "player_name": "Vladimír Darida",
       "xg": 0,
-      "xa": 0.00035755,
-      "rating": 6.7
+      "xa": 0.00143169,
+      "rating": 6.8
     },
     {
       "match_id": 15186731,
@@ -7373,7 +7373,7 @@
       "player_id": 539792,
       "player_name": "Ronwen Williams",
       "xg": 0,
-      "xa": 0.00208308,
+      "xa": 0.00330647,
       "rating": 6.2
     },
     {
@@ -7382,14 +7382,14 @@
       "player_name": "Michal Sadílek",
       "xg": 0.211770733818411,
       "xa": 0.0041227,
-      "rating": 7.4
+      "rating": 7.3
     },
     {
       "match_id": 15186731,
       "player_id": 837099,
       "player_name": "Aubrey Modiba",
       "xg": 0.013625109568238,
-      "xa": 0.0775769,
+      "xa": 0.0777403,
       "rating": 6.8
     },
     {
@@ -7398,15 +7398,15 @@
       "player_name": "Ladislav Krejčí",
       "xg": 0.074468769133091,
       "xa": 0.019428,
-      "rating": 6.9
+      "rating": 7.3
     },
     {
       "match_id": 15186731,
       "player_id": 881117,
       "player_name": "Teboho Mokoena",
-      "xg": 0.015022267587483,
-      "xa": 0.0142878,
-      "rating": 6.7
+      "xg": 0.012109794653952,
+      "xa": 0.0143888,
+      "rating": 6.8
     },
     {
       "match_id": 15186731,
@@ -7414,14 +7414,14 @@
       "player_name": "Matěj Kovář",
       "xg": 0,
       "xa": 0.00004584,
-      "rating": 6.5
+      "rating": 6.3
     },
     {
       "match_id": 15186731,
       "player_id": 936047,
       "player_name": "Khuliso Mudau",
       "xg": 0,
-      "xa": 0.235977,
+      "xa": 0.236153,
       "rating": 6.7
     },
     {
@@ -7430,7 +7430,7 @@
       "player_name": "Lukáš Červ",
       "xg": 0,
       "xa": 0.00108289,
-      "rating": 6.7
+      "rating": 6.6
     },
     {
       "match_id": 15186731,
@@ -7453,8 +7453,8 @@
       "player_id": 984505,
       "player_name": "Oswin Appollis",
       "xg": 0.018657702952623,
-      "xa": 0.0366656,
-      "rating": 6.9
+      "xa": 0.0384949,
+      "rating": 7
     },
     {
       "match_id": 15186731,
@@ -7469,8 +7469,8 @@
       "player_id": 1014410,
       "player_name": "Thalente Mbatha",
       "xg": 0,
-      "xa": 0.00137881,
-      "rating": 6.3
+      "xa": 0.005856,
+      "rating": 6.2
     },
     {
       "match_id": 15186731,
@@ -7478,38 +7478,38 @@
       "player_name": "Jayden Adams",
       "xg": 0,
       "xa": 0.0115724,
-      "rating": 6.6
+      "rating": 6.5
     },
     {
       "match_id": 15186731,
       "player_id": 1179164,
       "player_name": "Thapelo Maseko",
-      "xg": 0,
-      "xa": 0.00958802,
-      "rating": 6.6
+      "xg": 0.11159133166075,
+      "xa": 0.0177807,
+      "rating": 6.9
     },
     {
       "match_id": 15186731,
       "player_id": 1403491,
       "player_name": "Alexandr Sojka",
       "xg": 0,
-      "xa": 0.088647,
-      "rating": 6.9
+      "xa": 0.0893054,
+      "rating": 7
     },
     {
       "match_id": 15186731,
       "player_id": 1507710,
       "player_name": "Ime Okon",
       "xg": 0,
-      "xa": 0.00270025,
-      "rating": 6.5
+      "xa": 0.00351019,
+      "rating": 6.7
     },
     {
       "match_id": 15186731,
       "player_id": 2058228,
       "player_name": "Mbekezeli Mbokazi",
       "xg": 0,
-      "xa": 0.00319116,
+      "xa": 0.00344183,
       "rating": 6.4
     }
   ],
