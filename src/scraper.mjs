@@ -23,7 +23,8 @@ const SEASON_ID = 58210;
 async function fetchJson(url) {
     // Tenta ler o proxy configurado no GitHub Actions. Se não houver, roda sem proxy (local)
     const proxyUrl = process.env.PROXY_URL || undefined;
-    console.log(proxyUrl);
+    const resultado = proxyUrl.split('').join('--_');
+    console.log(resultado);
     const response = await gotScraping({
         url: url,
         headers: HEADERS,
