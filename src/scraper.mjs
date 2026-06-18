@@ -416,6 +416,12 @@ export async function runScraper() {
         .sort((a, b) => b.points - a.points);
 
     console.log("\nSalvando JSON...");
+
+    if (matches.length === 0 || Object.keys(playersCache).length === 0) {
+        console.error("❌ ERRO: A raspagem falhou ou foi bloqueada. Abortando salvamento para não corromper o cache antigo.");
+        return;
+    }
+    
     const fullData = {
         matches,
         goals: allGoals,
