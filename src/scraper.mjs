@@ -26,6 +26,8 @@ async function fetchJson(url) {
     
     if(proxyUrl != undefined){
         console.log("Buscando com proxy...");
+    }else{
+        console.log("Buscando sem proxy...");
     }
 
     const response = await gotScraping({
