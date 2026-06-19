@@ -743,6 +743,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(!pitch) return;
         pitch.innerHTML = ''; 
 
+        // Descobrir quais matches são permitidos baseado nos filtros
         let allowedMatchesIds = data.matches.filter(m => m.status === 'Ended');
         if (stageFilter !== 'all') allowedMatchesIds = allowedMatchesIds.filter(m => m.roundStage === stageFilter);
         if (roundFilter !== 'all') allowedMatchesIds = allowedMatchesIds.filter(m => String(m.round) === String(roundFilter));
@@ -750,7 +751,54 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const validMatchIds = allowedMatchesIds.map(m => m.match_id);
 
-        let filteredPlayers = [...data.player_match_stats].filter(p => p.rating != null && validMatchIds.includes(p.match_id));
+        // Extrai atuações isoladas de cada partida que passou no filtro
+        let rawFiltered = [...data.player_match_stats].filter(p => p.rating != null && validMatchIds.includes(p.match_id));
+        
+        // Agrupar por jogador para tirar a MÉDIA e descobrir a posição mais jogada neste recorte
+        const playerAgg = {};
+        rawFiltered.forEach(p => {
+            if (!playerAgg[p.player_id]) {
+                playerAgg[p.player_id] = {
+                    player_id: p.player_id,
+                    player_name: p.player_name,
+                    ratings: [],
+                    positions: {}
+                };
+            }
+            playerAgg[p.player_id].ratings.push(p.rating);
+            
+            const pos = p.detailed_position;
+            if (pos) {
+                playerAgg[p.player_id].positions[pos] = (playerAgg[p.player_id].positions[pos] || 0) + 1;
+            }
+        });
+
+        // Constrói a lista final onde cada jogador tem apenas UMA nota (a média)
+        let filteredPlayers = [];
+        for (const pid in playerAgg) {
+            const agg = playerAgg[pid];
+            // Média real do jogador nos jogos filtrados
+            const avgRating = agg.ratings.reduce((a,b) => a+b, 0) / agg.ratings.length;
+            
+            // Qual posição ele jogou mais vezes neste recorte?
+            let bestPos = null;
+            let maxCount = 0;
+            for (const pos in agg.positions) {
+                if (agg.positions[pos] > maxCount) {
+                    maxCount = agg.positions[pos];
+                    bestPos = pos;
+                }
+            }
+
+            filteredPlayers.push({
+                player_id: pid,
+                player_name: agg.player_name,
+                rating: avgRating,
+                detailed_position: bestPos
+            });
+        }
+
+        // Ordenar os jogadores pela MÉDIA da nota, da maior para a menor
         filteredPlayers.sort((a, b) => b.rating - a.rating);
 
         const template = formationTemplates[formationKey];
@@ -766,6 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const requiredRole = slot.role;
             const acceptedRoles = positionFallbacks[requiredRole] || [requiredRole];
             
+            // Procura o jogador com melhor MÉDIA que se encaixa na vaga
             const bestPlayerForSlot = filteredPlayers.find(p => 
                 acceptedRoles.includes(p.detailed_position) && !selectedPlayersIds.has(p.player_id)
             );
@@ -776,6 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Renderiza no Campo
         best11.forEach(item => {
             const p = item.player;
             const s = item.slot;
@@ -797,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="short-name">${shortName}</span>
                     <span class="full-name" style="display: none;">${nameWithFlag}</span>
                 </div>
-                <div class="player-rating">${p.rating.toFixed(1)}</div>
+                <div class="player-rating">${p.rating.toFixed(2)}</div>
             `;
             
             pitch.appendChild(marker);
