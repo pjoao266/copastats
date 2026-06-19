@@ -81,17 +81,30 @@ async function getMatches() {
     while (true) {
         const url = `https://api.sofascore.com/api/v1/unique-tournament/${TOURNAMENT_ID}/season/${SEASON_ID}/events/last/${page}`;
         try {
+            let roundStage = ''
+            let round = ''
             const data = await fetchJson(url);
             for (const ev of data.events || []) {
                 const statusDesc = ev.status?.description;
                 if (statusDesc !== 'Not started') {
+                    let roundInfo = ev.roundInfo
+                    if (roundInfo?.name && roundInfo?.name !== '') {
+                        round = roundInfo?.name
+                        roundStage = 'Fase Eliminatória'
+                    }else{
+                        roundStage = 'Fase de Grupos'
+                        round = `${roundInfo?.round}ª rodada`
+                    }
+
                     validMatches.push({
                         match_id: ev.id,
                         home: ev.homeTeam?.name,
                         away: ev.awayTeam?.name,
                         home_score: ev.homeScore?.current || 0,
                         away_score: ev.awayScore?.current || 0,
-                        status: statusDesc
+                        status: statusDesc,
+                        round: round,
+                        roundStage: roundStage
                     });
                 }
             }
@@ -142,6 +155,16 @@ async function processMatch(match, playersCache) {
     const isEnded = match.status === 'Ended';
     const matchGoals = [];
     const playerMatchStats = {};
+
+    
+    let roundData = [];
+    try {
+        const roundData = await fetchJson(`https://api.sofascore.com/api/v1/event/${matchId}/shotmap`);
+        roundInfo = roundData.roundInfo || [];
+    } catch (e) {}
+    // verificar se roundInfo name existe e é diferente de ''
+
+
 
     // 1. SHOTMAP
     let shotsData = [];

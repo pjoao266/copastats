@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnRefresh = document.getElementById('btn-refresh');
     const themeToggle = document.getElementById('theme-toggle');
 
-    // Theme logic
+    // ==========================================
+    // 1. TEMA E UTILITÁRIOS GERAIS
+    // ==========================================
     let isDark = true;
     themeToggle.addEventListener('click', () => {
         isDark = !isDark;
@@ -13,50 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
 
-function isoParaEmojiBandeira(codigoIso) {
-    if (!codigoIso || codigoIso.length !== 2) return '';
-    
-    const codigoMaiusculo = codigoIso.toUpperCase();
-    
-    // Deslocamento mágico do Unicode para Símbolos Indicadores Regionais (127397)
-    return String.fromCodePoint(
-        codigoMaiusculo.codePointAt(0) + 127397,
-        codigoMaiusculo.codePointAt(1) + 127397
-    );
-}
-
-function formatPlayerName(info) {
-    if (!info) return 'Desconhecido';
-    const name = info.name || 'Desconhecido';
-    
-    // Pega o código alpha2 com segurança (usando ? para evitar erro se 'country' não existir)
-    const alpha2 = info.country?.alpha2 || '';
-
-    if (!alpha2 || alpha2.toLowerCase() === 'seleção') {
-        return name;
+    function isoParaEmojiBandeira(codigoIso) {
+        if (!codigoIso || codigoIso.length !== 2) return '';
+        const codigoMaiusculo = codigoIso.toUpperCase();
+        return String.fromCodePoint(
+            codigoMaiusculo.codePointAt(0) + 127397,
+            codigoMaiusculo.codePointAt(1) + 127397
+        );
     }
 
-    let flagHtml = '';
+    function formatPlayerName(info) {
+        if (!info) return 'Desconhecido';
+        const name = info.name || 'Desconhecido';
+        const alpha2 = info.country?.alpha2 || '';
 
-    // Verifica se é a Inglaterra (Sofascore costuma mandar 'EN' para a Inglaterra)
-    if (alpha2.toUpperCase() === 'EN') {
-        flagHtml = `<img src="https://flagcdn.com/16x12/gb-eng.png" class="ms-2 shadow-sm" style="width: 16px; height: 12px; vertical-align: middle; margin-top: -2px;">`;
-    } else {
-        // Para os outros países, converte o alpha2 (ex: 'BR') direto para o emoji
-        const emoji = isoParaEmojiBandeira(alpha2);
-        flagHtml = `<span class="flag-emoji ms-2">${emoji}</span>`;
+        if (!alpha2 || alpha2.toLowerCase() === 'seleção') {
+            return name;
+        }
+
+        let flagHtml = '';
+        if (alpha2.toUpperCase() === 'EN') {
+            flagHtml = `<img src="https://flagcdn.com/16x12/gb-eng.png" class="ms-1 shadow-sm" style="width: 14px; height: 10px; vertical-align: middle; margin-top: -2px;">`;
+        } else {
+            const emoji = isoParaEmojiBandeira(alpha2);
+            flagHtml = `<span class="flag-emoji ms-1" style="font-size: 1.1em;">${emoji}</span>`;
+        }
+
+        return `${name} ${flagHtml}`.trim();
     }
 
-    return `${name} &nbsp; ${flagHtml}`.trim();
-}
+    function obterImagemSegura(urlSofascore) {
+        return urlSofascore;
+    }
 
-function obterImagemSegura(urlSofascore) {
-    //const VERCEL_BASE = 'https://statscopa26.vercel.app/api/image';
-    // Codifica a URL para evitar problemas com caracteres especiais na query string
-    // return `${VERCEL_BASE}?url=${encodeURIComponent(urlSofascore)}`;
-    return urlSofascore;
-}
-    // Inicializa a aplicação
+    // ==========================================
+    // 2. INICIALIZAÇÃO E FETCH DOS DADOS
+    // ==========================================
     fetchData();
 
     btnRefresh.addEventListener('click', async () => {
@@ -66,29 +60,15 @@ function obterImagemSegura(urlSofascore) {
         
         try {
             const urlVercel = 'https://statscopa26.vercel.app/api/sync';
-            
             const res = await fetch(urlVercel, { method: 'POST' });
-            if(res.ok) {
-                badge.innerHTML = '🤖 Robô acionado! Atualize a página em 1 min.';
-            } else {
-                badge.innerHTML = '❌ Erro ao acionar o robô';
-            }
+            if(res.ok) badge.innerHTML = '🤖 Robô acionado! Atualize a página em 1 min.';
+            else badge.innerHTML = '❌ Erro ao acionar o robô';
         } catch (e) {
-            console.error("Erro no sync", e);
             badge.innerHTML = '❌ Erro de conexão';
         } finally {
             btnRefresh.disabled = false;
         }
     });
-
-    document.getElementById('stats-filter').addEventListener('change', () => {
-        if(appData) renderStats(appData);
-    });
-    
-    document.getElementById('stats-sort').addEventListener('change', () => {
-        if(appData) renderStats(appData);
-    });
-
 
     async function fetchData() {
         badge.style.display = 'inline-block';
@@ -100,7 +80,7 @@ function obterImagemSegura(urlSofascore) {
                 renderAll();
             } else {
                 badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-1"></i> Aguardando dados...';
-                setTimeout(fetchData, 5000); // Tenta novamente em 5s
+                setTimeout(fetchData, 5000); 
             }
         } catch (e) {
             console.error("Erro ao buscar dados", e);
@@ -108,82 +88,92 @@ function obterImagemSegura(urlSofascore) {
         }
     }
 
-    let countriesPopulated = false;
-
-    function populateCountries(data) {
-        if (countriesPopulated) return;
-        const countryFilter = document.getElementById('ranking-countries-filter');
-        if (!countryFilter) return;
-
-        const countries = new Set();
-        data.players_info.forEach(p => {
-            if (p.country.name) countries.add(p.country.name);
-        });
-
-        const sortedcountries = Array.from(countries).sort();
-        sortedcountries.forEach(country => {
-            const option = document.createElement('option');
-            option.value = country;
-            option.textContent = country;
-            countryFilter.appendChild(option);
-        });
-        countriesPopulated = true;
-    }
-
     function renderAll() {
         renderBingo(appData);
-        renderStats(appData);
         populateCountries(appData);
+        renderStats(appData);
         renderRanking(appData);
+        initBest11Filters(appData); // Inicializa filtros e renderiza o campo
     }
 
-    // --- BINGO LOGIC ---
+    // ==========================================
+    // 3. LÓGICA DO BINGO DOS MINUTOS
+    // ==========================================
     let bingoModalInst = null;
     
+// ==========================================
+// 3. LÓGICA DO BINGO DOS MINUTOS (ATUALIZADA)
+// ==========================================
     function renderBingo(data) {
         const grid = document.getElementById('bingo-grid');
         grid.innerHTML = '';
         
-        const minutesMap = {};
-        for(let i=0; i<=90; i++) minutesMap[i.toString()] = [];
-        for(let i=1; i<=10; i++) minutesMap[`45+${i}`] = [];
-        for(let i=1; i<=10; i++) minutesMap[`90+${i}`] = [];
+        const firstHalfMap = {};
+        const secondHalfMap = {};
+
+        // 1º Tempo: do 0 ao 45 e acréscimos
+        for(let i=0; i<=45; i++) firstHalfMap[i.toString()] = [];
+        for(let i=1; i<=10; i++) firstHalfMap[`45+${i}`] = [];
+        
+        // 2º Tempo: do 46 ao 90 e acréscimos
+        for(let i=46; i<=90; i++) secondHalfMap[i.toString()] = [];
+        for(let i=1; i<=10; i++) secondHalfMap[`90+${i}`] = [];
 
         data.goals.forEach(g => {
             const m = g.minute;
-            if(minutesMap[m] !== undefined) {
-                minutesMap[m].push(g);
-            } else {
-                minutesMap[m] = [g]; 
-            }
+            if(firstHalfMap[m] !== undefined) firstHalfMap[m].push(g);
+            else if(secondHalfMap[m] !== undefined) secondHalfMap[m].push(g);
         });
 
-        const totalRegulares = 90;
+        const totalRegulares = 91; // Agora conta do 0 ao 90 (91 minutos totais)
         let filledRegulares = 0;
 
-        Object.keys(minutesMap).sort((a, b) => {
-            const valA = a.includes('+') ? parseInt(a.split('+')[0]) + parseInt(a.split('+')[1])*0.1 : parseInt(a);
-            const valB = b.includes('+') ? parseInt(b.split('+')[0]) + parseInt(b.split('+')[1])*0.1 : parseInt(b);
-            return valA - valB;
-        }).forEach(min => {
-            const goalsArray = minutesMap[min];
-            const count = goalsArray ? goalsArray.length : 0;
-            const isRegular = !min.includes('+') && parseInt(min) > 0 && parseInt(min) <= 90;
-            if (isRegular && count > 0) filledRegulares++;
+        const renderHalf = (map, title) => {
+            // Criar o Título de Separação Visual
+            const sectionTitle = document.createElement('h5');
+            sectionTitle.className = "bingo-section-title";
+            sectionTitle.innerHTML = title;
+            grid.appendChild(sectionTitle);
 
-            const box = document.createElement('div');
-            box.className = `bingo-box ${count > 0 ? 'active' : ''}`;
-            box.innerHTML = `
-                <div>${min}'</div>
-                <div class="count">${count > 0 ? count + ' gol(s)' : ''}</div>
-            `;
-            
-            if (count > 0) {
-                box.addEventListener('click', () => showBingoModal(min, goalsArray, data));
-            }
-            
-            grid.appendChild(box);
-        });
+            // Lógica de Ordenação Segura
+            const keys = Object.keys(map).sort((a, b) => {
+                const baseA = parseInt(a);
+                const baseB = parseInt(b);
+                if (baseA !== baseB) return baseA - baseB;
+                
+                const isPlusA = a.includes('+');
+                const isPlusB = b.includes('+');
+                if (!isPlusA && isPlusB) return -1;
+                if (isPlusA && !isPlusB) return 1;
+                
+                const extraA = isPlusA ? parseInt(a.split('+')[1]) : 0;
+                const extraB = isPlusB ? parseInt(b.split('+')[1]) : 0;
+                return extraA - extraB;
+            });
+
+            keys.forEach(min => {
+                const goalsArray = map[min];
+                const count = goalsArray.length;
+                const isRegular = !min.includes('+') && parseInt(min) >= 0 && parseInt(min) <= 90;
+                if (isRegular && count > 0) filledRegulares++;
+
+                const box = document.createElement('div');
+                box.className = `bingo-box ${count > 0 ? 'active' : ''}`;
+                box.innerHTML = `
+                    <div>${min}'</div>
+                    <div class="count">${count > 0 ? count + ' gol(s)' : ''}</div>
+                `;
+                
+                if (count > 0) {
+                    box.addEventListener('click', () => showBingoModal(min, goalsArray, data));
+                }
+                grid.appendChild(box);
+            });
+        };
+
+        // Renderiza primeiro o 1º tempo, depois o 2º tempo (isso já impede o 46 de se misturar)
+        renderHalf(firstHalfMap, '');
+        renderHalf(secondHalfMap, '');
 
         const progress = Math.round((filledRegulares / totalRegulares) * 100);
         const pb = document.getElementById('bingo-progress-bar');
@@ -261,25 +251,23 @@ function obterImagemSegura(urlSofascore) {
         bingoModalInst.show();
     }
 
-    // --- STATS LOGIC ---
+    // ==========================================
+    // 4. ESTATÍSTICAS (AGRUPAMENTOS)
+    // ==========================================
     let playersModalInst = null;
-    
-    // Variáveis de estado para ordenação do modal
     let modalSortCol = null;
-    let modalSortDir = null; // 'desc', 'asc', ou null
+    let modalSortDir = null;
     let currentModalGroupItem = null;
 
-    // Listeners para cabeçalhos do modal
+    document.getElementById('stats-filter')?.addEventListener('change', () => { if(appData) renderStats(appData); });
+    document.getElementById('stats-sort')?.addEventListener('change', () => { if(appData) renderStats(appData); });
+
     document.querySelectorAll('#modal-players-table th[data-sort]').forEach(th => {
         th.addEventListener('click', () => {
             const col = th.getAttribute('data-sort');
             if (modalSortCol === col) {
-                if (modalSortDir === 'desc') {
-                    modalSortDir = 'asc';
-                } else if (modalSortDir === 'asc') {
-                    modalSortDir = null;
-                    modalSortCol = null;
-                }
+                if (modalSortDir === 'desc') modalSortDir = 'asc';
+                else if (modalSortDir === 'asc') { modalSortDir = null; modalSortCol = null; }
             } else {
                 modalSortCol = col;
                 modalSortDir = 'desc';
@@ -293,30 +281,17 @@ function obterImagemSegura(urlSofascore) {
         const sortBy = document.getElementById('stats-sort').value;
         const groups = {};
 
-        // Mapeia jogadores
         const playersMap = {};
         data.players_info.forEach(p => { playersMap[p.player_id] = p; });
 
-        // Estrutura para stats POR JOGADOR
         const playerStats = {};
         Object.keys(playersMap).forEach(pid => {
-            playerStats[pid] = {
-                info: playersMap[pid],
-                goals: 0,
-                assists: 0,
-                ratings: [],
-                xg: 0,
-                xa: 0
-            };
+            playerStats[pid] = { info: playersMap[pid], goals: 0, assists: 0, ratings: [], xg: 0, xa: 0 };
         });
 
         data.goals.forEach(g => {
-            if(!g.is_own_goal && playerStats[g.scorer_id]) {
-                playerStats[g.scorer_id].goals++;
-            }
-            if(g.assist_id && playerStats[g.assist_id]) {
-                playerStats[g.assist_id].assists++;
-            }
+            if(!g.is_own_goal && playerStats[g.scorer_id]) playerStats[g.scorer_id].goals++;
+            if(g.assist_id && playerStats[g.assist_id]) playerStats[g.assist_id].assists++;
         });
 
         data.player_match_stats.forEach(st => {
@@ -327,7 +302,6 @@ function obterImagemSegura(urlSofascore) {
             }
         });
 
-        // Agrupamento
         Object.values(playerStats).forEach(ps => {
             const p = ps.info;
             let key = getGroupKey(p, filter);
@@ -339,8 +313,8 @@ function obterImagemSegura(urlSofascore) {
             } else if (filter === 'club') {
                 imgUrl = p.club_id ? `https://img.sofascore.com/api/v1/team/${p.club_id}/image` : null;
             } else if (filter === 'country'){
-                imgUrl = p.country.alpha2 ? `https://img.sofascore.com/api/v1/country/${p.country.alpha2}/flag` : null
-            } // Para 'country', deixamos imgUrl como nulo para usar ícone genérico
+                imgUrl = p.country.alpha2 ? `https://img.sofascore.com/api/v1/country/${p.country.alpha2}/flag` : null;
+            }
 
             if(!groups[key]) {
                 groups[key] = { name: key, img: imgUrl, goals: 0, assists: 0, xg: 0, xa: 0, ratings: [], playersCount: 0, players: [] };
@@ -361,7 +335,6 @@ function obterImagemSegura(urlSofascore) {
             return g;
         });
 
-        // Ordenação
         list.sort((a,b) => {
             if (sortBy === 'goals') return b.goals - a.goals || b.avgRating - a.avgRating;
             if (sortBy === 'assists') return b.assists - a.assists || b.avgRating - a.avgRating;
@@ -371,7 +344,6 @@ function obterImagemSegura(urlSofascore) {
             return 0;
         });
 
-        // Render Table
         const tbody = document.querySelector('#stats-table tbody');
         tbody.innerHTML = '';
         list.forEach((item, index) => {
@@ -388,21 +360,15 @@ function obterImagemSegura(urlSofascore) {
                 <td class="text-center text-secondary fw-bold">${item.xa.toFixed(2)}</td>
                 <td class="text-center text-warning fw-bold">${item.avgRating ? item.avgRating.toFixed(2) : '-'}</td>
             `;
-            
-            tr.addEventListener('click', () => {
-                showPlayersModal(item);
-            });
-            
+            tr.addEventListener('click', () => showPlayersModal(item));
             tbody.appendChild(tr);
         });
 
-        // Render Top 3 Cards
         const cardsContainer = document.getElementById('top-stats-cards');
         cardsContainer.innerHTML = '';
         list.slice(0, 3).forEach((item, index) => {
             let imgHtml = item.img ? `<img src="${obterImagemSegura(item.img)}" class="top-card-img me-3" onerror="this.style.display='none'">` : '<div class="top-card-img me-3 bg-secondary d-flex align-items-center justify-content-center"><i class="fa-solid fa-users text-dark"></i></div>';
             if(filter === 'age' || filter === 'height') imgHtml = '<div class="top-card-img me-3 bg-warning d-flex align-items-center justify-content-center"><i class="fa-solid fa-chart-simple text-dark"></i></div>';
-            //if(filter === 'country') imgHtml = '<div class="top-card-img me-3 bg-success d-flex align-items-center justify-content-center"><i class="fa-solid fa-flag text-white"></i></div>';
             
             const medals = ['🥇', '🥈', '🥉'];
             cardsContainer.innerHTML += `
@@ -431,7 +397,7 @@ function obterImagemSegura(urlSofascore) {
 
     function showPlayersModal(groupItem) {
         currentModalGroupItem = groupItem;
-        modalSortCol = null; // Reseta a ordenação sempre que abre um novo
+        modalSortCol = null;
         modalSortDir = null;
         
         document.getElementById('playersModalLabel').textContent = `Jogadores: ${groupItem.name}`;
@@ -447,7 +413,6 @@ function obterImagemSegura(urlSofascore) {
         const tbody = document.querySelector('#modal-players-table tbody');
         tbody.innerHTML = '';
         
-        // Atualiza os ícones do cabeçalho
         document.querySelectorAll('#modal-players-table th[data-sort]').forEach(th => {
             const icon = th.querySelector('.sort-icon');
             icon.innerHTML = '';
@@ -462,21 +427,13 @@ function obterImagemSegura(urlSofascore) {
             players.sort((a,b) => {
                 let valA = a[modalSortCol];
                 let valB = b[modalSortCol];
-                
-                // Tratar a chave especial para nota
                 if (modalSortCol === 'rating') {
                     valA = a.avgRating;
                     valB = b.avgRating;
                 }
-                
-                if (modalSortDir === 'desc') {
-                    return valB - valA;
-                } else {
-                    return valA - valB;
-                }
+                return modalSortDir === 'desc' ? valB - valA : valA - valB;
             });
         } else {
-            // Ordenação padrão do combo box original caso não haja clique no modal
             const sortBy = document.getElementById('stats-sort').value;
             players.sort((a,b) => {
                 if (sortBy === 'goals') return b.goals - a.goals || b.avgRating - a.avgRating;
@@ -527,9 +484,30 @@ function obterImagemSegura(urlSofascore) {
         return null;
     }
 
+    // ==========================================
+    // 5. RANKING GERAL E FILTROS DE PAÍS
+    // ==========================================
+    let countriesPopulated = false;
+    function populateCountries(data) {
+        if (countriesPopulated) return;
+        const countryFilter = document.getElementById('ranking-countries-filter');
+        if (!countryFilter) return;
+
+        const countries = new Set();
+        data.players_info.forEach(p => { if (p.country.name) countries.add(p.country.name); });
+
+        Array.from(countries).sort().forEach(country => {
+            const option = document.createElement('option');
+            option.value = country; 
+            option.textContent = country;
+            countryFilter.appendChild(option);
+        });
+        countriesPopulated = true;
+    }
+
     const countryFilterEl = document.getElementById('ranking-countries-filter');
     if (countryFilterEl) {
-    countryFilterEl.addEventListener('change', () => { if (appData) renderRanking(appData); });
+        countryFilterEl.addEventListener('change', () => { if (appData) renderRanking(appData); });
     }
 
     const searchInputEl = document.getElementById('ranking-search');
@@ -537,25 +515,16 @@ function obterImagemSegura(urlSofascore) {
         searchInputEl.addEventListener('input', () => { if (appData) renderRanking(appData); });
     }
 
-    // --- RANKING LOGIC ---
     function renderRanking(data) {
         const selectedCountry = document.getElementById('ranking-countries-filter')?.value || '';
         const searchQuery = document.getElementById('ranking-search')?.value.trim().toLowerCase() || '';
-        console.log(selectedCountry);
+
         const playersMap = {};
         data.players_info.forEach(p => { playersMap[p.player_id] = p; });
 
         const pStats = {};
         Object.keys(playersMap).forEach(pid => {
-            pStats[pid] = {
-                id: pid,
-                info: playersMap[pid],
-                goals: 0,
-                assists: 0,
-                xg: 0,
-                xa: 0,
-                ratings: []
-            };
+            pStats[pid] = { id: pid, info: playersMap[pid], goals: 0, assists: 0, xg: 0, xa: 0, ratings: [] };
         });
 
         data.goals.forEach(g => {
@@ -575,7 +544,7 @@ function obterImagemSegura(urlSofascore) {
             ps.avgRating = ps.ratings.length > 0 ? ps.ratings.reduce((a,b)=>a+b,0)/ps.ratings.length : 0;
             return ps;
         });
-        // Aplica filtro de país se selecionado (assume opção "Todos" ou string vazia -> sem filtro)
+
         if (selectedCountry && selectedCountry !== 'Todos') {
             playerList = playerList.filter(ps => (ps.info.country?.name || '') === selectedCountry);
         }
@@ -583,11 +552,10 @@ function obterImagemSegura(urlSofascore) {
         if (searchQuery) {
             playerList = playerList.filter(ps => {
                 const playerName = (ps.info.name || '').toLowerCase();
-                return playerName.includes(searchQuery)
+                return playerName.includes(searchQuery);
             });
         }
         
-        // Função auxiliar para renderizar os grids e evitar código duplicado no "Empty State"
         const renderGrid = (gridId, list, mapFunction) => {
             const grid = document.getElementById(gridId);
             if (list.length === 0) {
@@ -603,7 +571,6 @@ function obterImagemSegura(urlSofascore) {
             }
         };
 
-        // 1. Pontos Gerados (MVP) Ranking
         const pointsMap = {};
         data.player_points.forEach(pp => { pointsMap[pp.player_id] = pp.points; });
 
@@ -620,23 +587,18 @@ function obterImagemSegura(urlSofascore) {
             return generateCardHtml(ps, i, `${pts} pts`, `<i class="fa-solid fa-star text-warning" style="font-size:0.9em;"></i> ${ps.avgRating.toFixed(2)}`);
         });
 
-        // 2. Goals Ranking
         const golsList = [...playerList].filter(ps => ps.goals > 0).sort((a,b) => b.goals - a.goals || b.avgRating - a.avgRating);
         renderGrid('ranking-gols-grid', golsList, (ps, i) => generateCardHtml(ps, i, `${ps.goals} Gols`));
 
-        // 3. Assists Ranking
         const astList = [...playerList].filter(ps => ps.assists > 0).sort((a,b) => b.assists - a.assists || b.avgRating - a.avgRating);
         renderGrid('ranking-assists-grid', astList, (ps, i) => generateCardHtml(ps, i, `${ps.assists} Assists`));
 
-        // 4. xG Ranking
         const xgList = [...playerList].filter(ps => ps.xg > 0).sort((a,b) => b.xg - a.xg || b.avgRating - a.avgRating);
         renderGrid('ranking-xg-grid', xgList, (ps, i) => generateCardHtml(ps, i, `${ps.xg.toFixed(2)} xG`));
 
-        // 5. xAst Ranking
         const xaList = [...playerList].filter(ps => ps.xa > 0).sort((a,b) => b.xa - a.xa || b.avgRating - a.avgRating);
         renderGrid('ranking-xa-grid', xaList, (ps, i) => generateCardHtml(ps, i, `${ps.xa.toFixed(2)} xAst`));
         
-        // 6. Média de Notas Ranking
         const ratingList = [...playerList].filter(ps => ps.avgRating > 0).sort((a,b) => b.avgRating - a.avgRating);
         renderGrid('ranking-rating-grid', ratingList, (ps, i) => generateCardHtml(ps, i, `${ps.avgRating.toFixed(2)}`));
     }
@@ -668,4 +630,178 @@ function obterImagemSegura(urlSofascore) {
             </div>
         `;
     }
-});
+
+    // ==========================================
+    // 6. SELEÇÃO IDEAL (CAMPO / BEST 11)
+    // ==========================================
+    const elStage = document.getElementById('select-round-stage');
+    const elRound = document.getElementById('select-round-name');
+    const elMatch = document.getElementById('select-match');
+    const elFormation = document.getElementById('select-formation');
+
+    function initBest11Filters(data) {
+        if(!elStage) return;
+
+        const stages = [...new Set(data.matches.map(m => m.roundStage).filter(Boolean))];
+        
+        elStage.innerHTML = '<option value="all">Todas as Fases</option>';
+        stages.forEach(stage => {
+            elStage.innerHTML += `<option value="${stage}">${stage}</option>`;
+        });
+
+        elStage.addEventListener('change', () => {
+            updateRoundDropdown(data);
+            updateMatchDropdown(data);
+            renderBest11(data);
+        });
+
+        elRound.addEventListener('change', () => {
+            updateMatchDropdown(data);
+            renderBest11(data);
+        });
+
+        elMatch.addEventListener('change', () => renderBest11(data));
+        elFormation.addEventListener('change', () => renderBest11(data));
+        
+        updateRoundDropdown(data);
+        updateMatchDropdown(data);
+        renderBest11(data);
+    }
+
+    function updateRoundDropdown(data) {
+        const stageFilter = elStage.value;
+        let validMatches = data.matches.filter(m => m.status === 'Ended');
+        
+        if (stageFilter !== 'all') {
+            validMatches = validMatches.filter(m => m.roundStage === stageFilter);
+        }
+
+        const rounds = [...new Set(validMatches.map(m => m.round).filter(Boolean))];
+        elRound.innerHTML = '<option value="all">Todas as Rodadas</option>';
+        rounds.forEach(r => {
+            elRound.innerHTML += `<option value="${r}">${r}</option>`;
+        });
+    }
+
+    function updateMatchDropdown(data) {
+        const stageFilter = elStage.value;
+        const roundFilter = elRound.value;
+        let validMatches = data.matches.filter(m => m.status === 'Ended');
+
+        if (stageFilter !== 'all') validMatches = validMatches.filter(m => m.roundStage === stageFilter);
+        if (roundFilter !== 'all') validMatches = validMatches.filter(m => String(m.round) === String(roundFilter));
+
+        elMatch.innerHTML = '<option value="all">Todos os Jogos</option>';
+        validMatches.forEach(m => {
+            elMatch.innerHTML += `<option value="${m.match_id}">${m.home} x ${m.away}</option>`;
+        });
+    }
+
+    const formationTemplates = {
+        '4-3-3': [
+            { role: 'GL', x: 50, y: 92 }, { role: 'LD', x: 85, y: 70 },
+            { role: 'ZAG', x: 65, y: 80 }, { role: 'ZAG', x: 35, y: 80 },
+            { role: 'LE', x: 15, y: 70 }, { role: 'VOL', x: 50, y: 55 },
+            { role: 'MC', x: 70, y: 40 }, { role: 'MC', x: 30, y: 40 }, 
+            { role: 'PD', x: 80, y: 15 }, { role: 'CA', x: 50, y: 10 },
+            { role: 'PE', x: 20, y: 15 }
+        ],
+        '4-4-2': [
+            { role: 'GL', x: 50, y: 92 }, { role: 'LD', x: 85, y: 75 },
+            { role: 'ZAG', x: 65, y: 80 }, { role: 'ZAG', x: 35, y: 80 },
+            { role: 'LE', x: 15, y: 75 }, { role: 'MD', x: 85, y: 45 },
+            { role: 'MC', x: 60, y: 50 }, { role: 'MC', x: 40, y: 50 },
+            { role: 'ME', x: 15, y: 45 }, { role: 'CA', x: 60, y: 15 },
+            { role: 'CA', x: 40, y: 15 }
+        ],
+        '3-5-2': [
+            { role: 'GL', x: 50, y: 92 }, { role: 'ZAG', x: 75, y: 80 },
+            { role: 'ZAG', x: 50, y: 82 }, { role: 'ZAG', x: 25, y: 80 },
+            { role: 'MD', x: 90, y: 50 }, { role: 'VOL', x: 50, y: 60 },
+            { role: 'MC', x: 65, y: 40 }, { role: 'MC', x: 35, y: 40 },
+            { role: 'ME', x: 10, y: 50 }, { role: 'CA', x: 60, y: 15 },
+            { role: 'CA', x: 40, y: 15 }
+        ]
+    };
+
+    const positionFallbacks = {
+        'GL': ['GL'], 'LD': ['LD', 'ZAG', 'MD'], 'LE': ['LE', 'ZAG', 'ME'],
+        'ZAG': ['ZAG', 'VOL'], 'VOL': ['VOL', 'MC', 'ZAG'], 'MC': ['MC', 'VOL', 'MEI'],
+        'MEI': ['MEI', 'MC', 'PE', 'PD'], 'MD': ['MD', 'PD', 'LD'], 'ME': ['ME', 'PE', 'LE'],
+        'PD': ['PD', 'CA', 'MD'], 'PE': ['PE', 'CA', 'ME'], 'CA': ['CA', 'PE', 'PD']
+    };
+
+    function renderBest11(data) {
+        if (!data || !data.player_match_stats) return;
+
+        const stageFilter = elStage.value;
+        const roundFilter = elRound.value;
+        const matchFilter = elMatch.value;
+        const formationKey = elFormation.value;
+        const pitch = document.getElementById('pitch-players');
+        
+        if(!pitch) return;
+        pitch.innerHTML = ''; 
+
+        let allowedMatchesIds = data.matches.filter(m => m.status === 'Ended');
+        if (stageFilter !== 'all') allowedMatchesIds = allowedMatchesIds.filter(m => m.roundStage === stageFilter);
+        if (roundFilter !== 'all') allowedMatchesIds = allowedMatchesIds.filter(m => String(m.round) === String(roundFilter));
+        if (matchFilter !== 'all') allowedMatchesIds = allowedMatchesIds.filter(m => String(m.match_id) === String(matchFilter));
+        
+        const validMatchIds = allowedMatchesIds.map(m => m.match_id);
+
+        let filteredPlayers = [...data.player_match_stats].filter(p => p.rating != null && validMatchIds.includes(p.match_id));
+        filteredPlayers.sort((a, b) => b.rating - a.rating);
+
+        const template = formationTemplates[formationKey];
+        if (!template) return;
+
+        const playersMap = {};
+        data.players_info.forEach(p => { playersMap[p.player_id] = p; });
+
+        const selectedPlayersIds = new Set();
+        const best11 = [];
+
+        for (const slot of template) {
+            const requiredRole = slot.role;
+            const acceptedRoles = positionFallbacks[requiredRole] || [requiredRole];
+            
+            const bestPlayerForSlot = filteredPlayers.find(p => 
+                acceptedRoles.includes(p.detailed_position) && !selectedPlayersIds.has(p.player_id)
+            );
+
+            if (bestPlayerForSlot) {
+                selectedPlayersIds.add(bestPlayerForSlot.player_id);
+                best11.push({ player: bestPlayerForSlot, slot: slot });
+            }
+        }
+
+        best11.forEach(item => {
+            const p = item.player;
+            const s = item.slot;
+            const info = playersMap[p.player_id] || {};
+            
+            const imgUrl = `https://img.sofascore.com/api/v1/player/${p.player_id}/image`;
+            const nameWithFlag = formatPlayerName(info);
+            const shortName = (info.name || p.player_name || 'Desconhecido').split(' ').slice(-1)[0]; 
+
+            const marker = document.createElement('div');
+            marker.className = 'player-marker';
+            marker.style.left = `${s.x}%`;
+            marker.style.top = `${s.y}%`;
+
+            marker.innerHTML = `
+                <div class="position-badge">${p.detailed_position}</div>
+                <img src="${obterImagemSegura(imgUrl)}" class="player-photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' fill=\\'none\\' viewBox=\\'0 0 24 24\\' stroke=\\'%23666\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z\\'/></svg>'">
+                <div class="player-info">
+                    <span class="short-name">${shortName}</span>
+                    <span class="full-name" style="display: none;">${nameWithFlag}</span>
+                </div>
+                <div class="player-rating">${p.rating.toFixed(1)}</div>
+            `;
+            
+            pitch.appendChild(marker);
+        });
+    }
+
+}); // Fim do DOMContentLoaded

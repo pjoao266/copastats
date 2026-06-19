@@ -37,6 +37,9 @@
                 <button class="nav-link rounded-5 text-uppercase fw-bold" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab" aria-selected="false"><i class="fa-solid fa-chart-pie me-2"></i>Estatísticas</button>
             </li>
             <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5 text-uppercase fw-bold" id="best11-tab" data-bs-toggle="tab" data-bs-target="#best11" type="button" role="tab"><i class="fa-solid fa-clipboard-list me-2"></i>Seleção Ideal</button>
+            </li>
+            <li class="nav-item" role="presentation">
                 <button class="nav-link rounded-5 text-uppercase fw-bold" id="ranking-tab" data-bs-toggle="tab" data-bs-target="#ranking" type="button" role="tab" aria-selected="false"><i class="fa-solid fa-medal me-2"></i>Rankings</button>
             </li>
         </ul>
@@ -104,6 +107,46 @@
                                 <tbody>
                                     </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="best11" role="tabpanel">
+                <div class="row mb-4 bg-body-secondary p-3 rounded shadow-sm align-items-end">
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <label class="form-label fw-bold small">Fase do Torneio:</label>
+                        <select id="select-round-stage" class="form-select form-select-sm">
+                            <option value="all">Todas as Fases</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <label class="form-label fw-bold small">Rodada:</label>
+                        <select id="select-round-name" class="form-select form-select-sm">
+                            <option value="all">Todas as Rodadas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-2 mb-md-0">
+                        <label class="form-label fw-bold small">Jogo Específico:</label>
+                        <select id="select-match" class="form-select form-select-sm">
+                            <option value="all">Todos os Jogos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold small">Formação Tática:</label>
+                        <select id="select-formation" class="form-select form-select-sm border-primary text-primary fw-bold">
+                            <option value="4-3-3">4-3-3 Clássico</option>
+                            <option value="4-4-2">4-4-2 Linhas</option>
+                            <option value="3-5-2">3-5-2 Alas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                        <div class="pitch-container shadow-lg">
+                            <div id="pitch-players">
+                                </div>
                         </div>
                     </div>
                 </div>

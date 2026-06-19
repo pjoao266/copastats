@@ -236,3 +236,159 @@ body {
 [data-bs-theme="light"] .btn-close-white {
     filter: invert(1) grayscale(100%) brightness(50%);
 }
+
+
+.pitch-container {
+    position: relative;
+    width: 100%;
+    /* Mantém a proporção de um campo de futebol (retângulo vertical) */
+    padding-top: 130%; 
+    background-color: #2e8b57;
+    background-image: 
+        linear-gradient(rgba(255,255,255,.05) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 2px, transparent 2px),
+        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Linha central do campo */
+.pitch-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+/* Círculo central */
+.pitch-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    padding-top: 20%;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Marcador do Jogador (Cartinha com Foto) */
+.player-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    text-align: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.player-marker:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+    z-index: 20;
+}
+
+.player-photo {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: 2px solid #fdd301;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+.player-marker .position-badge {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    background: #212529;
+    color: #fdd301;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 4px;
+    border: 1px solid #fdd301;
+    z-index: 11;
+}
+
+.player-marker .player-info {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-marker .player-rating {
+    background: #198754;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-top: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Título de Separação do Bingo */
+.bingo-section-title {
+    grid-column: 1 / -1; /* Força o título a abraçar todas as colunas do CSS Grid */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--bs-border-color);
+    padding-bottom: 0.5rem;
+    color: var(--bs-body-color);
+}
+
+/* Base da info do jogador */
+.player-marker .player-info {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+}
+
+/* Expansão e Hover na Cartinha da Seleção Ideal */
+.player-marker:hover .player-info {
+    width: max-content; /* Estica o container pro tamanho do nome */
+    max-width: 250px; /* Limite de segurança */
+    overflow: visible;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.95);
+}
+
+.player-marker:hover .short-name { 
+    display: none; 
+}
+
+.player-marker:hover .full-name { 
+    display: inline-block !important; /* Mostra o nome completo + bandeira ao passar o mouse */
+}

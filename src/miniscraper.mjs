@@ -18,8 +18,7 @@ const HEADERS = {
 };
 const DADOS_DIR = "dados";
 const TOURNAMENT_ID = 16;
-const SEASON_ID = 58210;
-
+const SEASON_ID = 41087;
 async function fetchJson(url) {
     // Tenta ler o proxy configurado no GitHub Actions. Se não houver, roda sem proxy (local)
     const proxyUrl = process.env.PROXY_URL || undefined;
@@ -31,6 +30,52 @@ async function fetchJson(url) {
     });
     return response.body;
 }
+
+async function getMatches() {
+    let page = 0;
+    const validMatches = [];
+    console.log("Buscando jogos...");
+    while (true) {
+        const url = `https://api.sofascore.com/api/v1/unique-tournament/${TOURNAMENT_ID}/season/${SEASON_ID}/events/last/${page}`;
+        try {
+            let roundStage = ''
+            let round = ''
+            const data = await fetchJson(url);
+            for (const ev of data.events || []) {
+                const statusDesc = ev.status?.description;
+                if (statusDesc !== 'Not started') {
+                    
+                    let roundInfo = ev.roundInfo
+                    if(roundInfo?.name && roundInfo?.name !== '') {
+                        round = roundInfo?.name
+                        roundStage = 'Fase Eliminatória'
+                    }else{
+                        roundStage = 'Fase de Grupos'
+                        round = `${roundInfo.round}ª rodada`
+                    }
+                    
+                    validMatches.push({
+                        match_id: ev.id,
+                        home: ev.homeTeam?.name,
+                        away: ev.awayTeam?.name,
+                        home_score: ev.homeScore?.current || 0,
+                        away_score: ev.awayScore?.current || 0,
+                        status: statusDesc,
+                        round: round,
+                        roundStage: roundStage
+                    });
+                }
+            }
+            if (!data.hasNextPage) break;
+            page++;
+        } catch (e) {
+            break;
+        }
+    }
+    return validMatches;
+}
+
+
 const jsonPath = path.join(DADOS_DIR, '15186731_lineups.json');
-const lineupsData = await fetchJson(`https://api.sofascore.com/api/v1/event/15186731/lineups`);
+const lineupsData = await getMatches();
 await fs.writeFile(jsonPath, JSON.stringify(lineupsData, null, 2), 'utf-8');
