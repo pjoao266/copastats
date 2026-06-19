@@ -289,6 +289,16 @@
       "status": "Ended",
       "round": "2ª rodada",
       "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186859,
+      "home": "Scotland",
+      "away": "Morocco",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "1st half",
+      "round": "2ª rodada",
+      "roundStage": "Fase de Grupos"
     }
   ],
   "goals": [
