@@ -296,7 +296,7 @@
       "away": "Curaçao",
       "home_score": 0,
       "away_score": 0,
-      "status": "2nd half",
+      "status": "Ended",
       "round": "2ª rodada",
       "roundStage": "Fase de Grupos"
     },
@@ -16591,8 +16591,8 @@
       "detailed_position": "GL",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 6.3647887323944,
+      "average_y": 46.618309859155
     },
     {
       "match_id": 15186906,
@@ -16600,13 +16600,13 @@
       "player_name": "Leandro Bacuna",
       "xg": 0.078100968152285,
       "xa": 0.0530524,
-      "rating": 6.4,
+      "rating": 6.5,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "VOL",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 41.110204081633,
+      "average_y": 54.891836734694
     },
     {
       "match_id": 15186906,
@@ -16619,8 +16619,8 @@
       "detailed_position": "CA",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 52.270731707317,
+      "average_y": 47.236585365854
     },
     {
       "match_id": 15186906,
@@ -16633,36 +16633,36 @@
       "detailed_position": "CA",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 73.851351351351,
+      "average_y": 60.440540540541
     },
     {
       "match_id": 15186906,
       "player_id": 296438,
       "player_name": "Joshua Brenet",
       "xg": 0,
-      "xa": 0.00754264,
-      "rating": 7.3,
+      "xa": 0.00783401,
+      "rating": 7.5,
       "nominal_position": "D",
       "detailed_position": "LD",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 35.933333333333,
+      "average_y": 17.33768115942
     },
     {
       "match_id": 15186906,
       "player_id": 588618,
       "player_name": "Hernán Galíndez",
       "xg": 0,
-      "xa": 0.00074014,
-      "rating": 7.8,
+      "xa": 0.00074215,
+      "rating": 8,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 11.41875,
+      "average_y": 48.959375
     },
     {
       "match_id": 15186906,
@@ -16672,11 +16672,11 @@
       "xa": 0.0777304,
       "rating": 6.7,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 56.233333333333,
+      "average_y": 66.968888888889
     },
     {
       "match_id": 15186906,
@@ -16686,11 +16686,11 @@
       "xa": 0,
       "rating": 6.4,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "PE",
       "formation": "5-4-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 40.916666666667,
+      "average_y": 73.2
     },
     {
       "match_id": 15186906,
@@ -16700,11 +16700,11 @@
       "xa": 0,
       "rating": 6.6,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "CA",
       "formation": "5-4-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 51.292857142857,
+      "average_y": 63.507142857143
     },
     {
       "match_id": 15186906,
@@ -16712,27 +16712,27 @@
       "player_name": "Sherel Constancio Floranus",
       "xg": 0.051099706441164,
       "xa": 0.00811585,
-      "rating": 7.4,
+      "rating": 7.6,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 28.123913043478,
+      "average_y": 73.584782608696
     },
     {
       "match_id": 15186906,
       "player_id": 804770,
       "player_name": "Jordy Caicedo",
       "xg": 0,
-      "xa": 0.0208701,
+      "xa": 0.0213848,
       "rating": null,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "CA",
       "formation": "3-1-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 83.95,
+      "average_y": 65.65
     },
     {
       "match_id": 15186906,
@@ -16740,13 +16740,13 @@
       "player_name": "Pervis Estupiñán",
       "xg": 0,
       "xa": 0.0754597,
-      "rating": 6.5,
+      "rating": 6.6,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "ME",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 61.144444444444,
+      "average_y": 86.183333333333
     },
     {
       "match_id": 15186906,
@@ -16754,13 +16754,13 @@
       "player_name": "Alan Franco",
       "xg": 0,
       "xa": 0.0205346,
-      "rating": 7.1,
+      "rating": 7.3,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 47.776595744681,
+      "average_y": 22.55
     },
     {
       "match_id": 15186906,
@@ -16768,13 +16768,13 @@
       "player_name": "Armando Obispo",
       "xg": 0,
       "xa": 0.0011449,
-      "rating": 6.9,
+      "rating": 7.2,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 21.889473684211,
+      "average_y": 47.052631578947
     },
     {
       "match_id": 15186906,
@@ -16782,13 +16782,13 @@
       "player_name": "Tahith Chong",
       "xg": 0,
       "xa": 0.00763964,
-      "rating": 6.8,
+      "rating": 6.9,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 48.941666666667,
+      "average_y": 27.1625
     },
     {
       "match_id": 15186906,
@@ -16796,13 +16796,13 @@
       "player_name": "Godfried Roemeratoe",
       "xg": 0,
       "xa": 0.00000962,
-      "rating": null,
+      "rating": 6.7,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "VOL",
       "formation": "5-4-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 17.114285714286,
+      "average_y": 33.614285714286
     },
     {
       "match_id": 15186906,
@@ -16810,27 +16810,27 @@
       "player_name": "John Yeboah",
       "xg": 0.196427345275879,
       "xa": 0.337073,
-      "rating": 7.1,
+      "rating": 7.2,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MD",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 66.99552238806,
+      "average_y": 19.564179104478
     },
     {
       "match_id": 15186906,
       "player_id": 881844,
       "player_name": "Ángelo Preciado",
-      "xg": 0.022502638399601,
-      "xa": 0.00033049,
-      "rating": 6.4,
+      "xg": 0,
+      "xa": 0.00238038,
+      "rating": 6.7,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "LD",
       "formation": "3-1-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 64.578571428571,
+      "average_y": 14.292857142857
     },
     {
       "match_id": 15186906,
@@ -16838,13 +16838,13 @@
       "player_name": "Jurien Gaari",
       "xg": 0,
       "xa": 0.0009524,
-      "rating": 6.5,
+      "rating": 6.6,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 22.702631578947,
+      "average_y": 28.368421052632
     },
     {
       "match_id": 15186906,
@@ -16852,13 +16852,13 @@
       "player_name": "Jordy Alcivar",
       "xg": 0.039093229919672,
       "xa": 0.0114877,
-      "rating": 6.5,
+      "rating": 6.6,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 48.880392156863,
+      "average_y": 41.501960784314
     },
     {
       "match_id": 15186906,
@@ -16866,27 +16866,27 @@
       "player_name": "Roshon van Eijma",
       "xg": 0,
       "xa": 0.00000801,
-      "rating": 6.7,
+      "rating": 7,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "ZAG",
       "formation": "5-4-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 22.177777777778,
+      "average_y": 67.933333333333
     },
     {
       "match_id": 15186906,
       "player_id": 937937,
       "player_name": "Gonzalo Plata",
-      "xg": 0.3223549798130979,
+      "xg": 0.3084413455799209,
       "xa": 0.16111,
-      "rating": 7.5,
+      "rating": 7.4,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 68.123913043478,
+      "average_y": 46.355434782609
     },
     {
       "match_id": 15186906,
@@ -16894,83 +16894,83 @@
       "player_name": "Willian Pacho",
       "xg": 0.11618176847696,
       "xa": 0.0283178,
-      "rating": 7.2,
+      "rating": 7.4,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 38.882178217822,
+      "average_y": 53.995049504951
     },
     {
       "match_id": 15186906,
       "player_id": 987650,
       "player_name": "Moisés Caicedo",
       "xg": 0.021100003272295,
-      "xa": 0.590446,
-      "rating": 8,
+      "xa": 0.597428,
+      "rating": 8.2,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 53.334899328859,
+      "average_y": 51.640268456376
     },
     {
       "match_id": 15186906,
       "player_id": 1002524,
       "player_name": "Pedro Vite",
       "xg": 0.074104372411966,
-      "xa": 0.246077,
+      "xa": 0.246706,
       "rating": 7.8,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 59.045528455285,
+      "average_y": 56.383739837398
     },
     {
       "match_id": 15186906,
       "player_id": 1002837,
       "player_name": "Piero Hincapié",
       "xg": 0.40937581658363,
-      "xa": 0.0471416,
-      "rating": 7.4,
+      "xa": 0.0514173,
+      "rating": 7.5,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "3-1-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 54.385454545455,
+      "average_y": 75.878181818182
     },
     {
       "match_id": 15186906,
       "player_id": 1036004,
       "player_name": "Jearl Margaritha",
       "xg": 0,
-      "xa": 0.00001078,
-      "rating": 6.4,
+      "xa": 0.00092434,
+      "rating": 6.3,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "PD",
       "formation": "5-4-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 37.372727272727,
+      "average_y": 31.272727272727
     },
     {
       "match_id": 15186906,
       "player_id": 1116571,
       "player_name": "Nilson Angulo",
       "xg": 0.016542987897992,
-      "xa": 0.0302254,
-      "rating": 6.6,
+      "xa": 0.0326596,
+      "rating": 6.8,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "PE",
       "formation": "3-1-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 75.85,
+      "average_y": 79.1
     },
     {
       "match_id": 15186906,
@@ -16978,13 +16978,13 @@
       "player_name": "Livano Comenencia",
       "xg": 0.143376816064124,
       "xa": 0.00564629,
-      "rating": 6.3,
+      "rating": 6.4,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "VOL",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 35.718181818182,
+      "average_y": 33.611363636364
     },
     {
       "match_id": 15186906,
@@ -16992,13 +16992,13 @@
       "player_name": "Deveron Fonville",
       "xg": 0,
       "xa": 0.0359881,
-      "rating": 6.7,
+      "rating": 6.9,
       "nominal_position": "D",
       "detailed_position": "LE",
       "formation": "5-4-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 37.313333333333,
+      "average_y": 83.366666666667
     },
     {
       "match_id": 15186906,
@@ -17006,13 +17006,13 @@
       "player_name": "Kevin Rodriguez",
       "xg": 0.295198537409309,
       "xa": 0.0189152,
-      "rating": 6.5,
+      "rating": 6.4,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "CA",
       "formation": "3-1-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 72.316666666667,
+      "average_y": 63.611111111111
     }
   ],
   "players_info": [
