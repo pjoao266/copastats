@@ -296,7 +296,7 @@
       "away": "Cabo Verde",
       "home_score": 2,
       "away_score": 1,
-      "status": "Halftime",
+      "status": "2nd half",
       "round": "2ª rodada",
       "roundStage": "Fase de Grupos"
     },
@@ -18618,7 +18618,7 @@
       "match_id": 15186800,
       "player_id": 784677,
       "player_name": "Diney Borges",
-      "xg": 0.10940197110176,
+      "xg": 0.011732800863683,
       "xa": 0.00133624,
       "rating": 6.3,
       "nominal_position": "D",
