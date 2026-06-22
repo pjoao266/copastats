@@ -1,16 +1,6 @@
 {
   "matches": [
     {
-      "match_id": 15186951,
-      "home": "Sweden",
-      "away": "Tunisia",
-      "home_score": 5,
-      "away_score": 1,
-      "status": "Ended",
-      "round": "1ª rodada",
-      "roundStage": "Fase de Grupos"
-    },
-    {
       "match_id": 15186783,
       "home": "Spain",
       "away": "Cabo Verde",
@@ -296,7 +286,17 @@
       "away": "Austria",
       "home_score": 2,
       "away_score": 0,
-      "status": "2nd half",
+      "status": "Ended",
+      "round": "2ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186769,
+      "home": "France",
+      "away": "Iraq",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "1st half",
       "round": "2ª rodada",
       "roundStage": "Fase de Grupos"
     },
@@ -406,6 +406,16 @@
       "away": "Ecuador",
       "home_score": 1,
       "away_score": 0,
+      "status": "Ended",
+      "round": "1ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186951,
+      "home": "Sweden",
+      "away": "Tunisia",
+      "home_score": 5,
+      "away_score": 1,
       "status": "Ended",
       "round": "1ª rodada",
       "roundStage": "Fase de Grupos"
@@ -19520,15 +19530,15 @@
       "match_id": 15186502,
       "player_id": 12994,
       "player_name": "Lionel Messi",
-      "xg": 1.932946724855906,
-      "xa": 0.241878,
-      "rating": 9.1,
+      "xg": 1.915485134387021,
+      "xa": 0.24188,
+      "rating": 9.2,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 59.578947368421,
+      "average_y": 42.234210526316
     },
     {
       "match_id": 15186502,
@@ -19538,25 +19548,25 @@
       "xa": 0.00002751,
       "rating": 6.5,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "CA",
       "formation": "4-2-3-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 51.225,
+      "average_y": 52.95
     },
     {
       "match_id": 15186502,
       "player_id": 66492,
       "player_name": "David Alaba",
       "xg": 0,
-      "xa": 0.0250458,
+      "xa": 0.0250459,
       "rating": 7.9,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 41.082456140351,
+      "average_y": 65.484210526316
     },
     {
       "match_id": 15186502,
@@ -19564,41 +19574,41 @@
       "player_name": "Nicolás Otamendi",
       "xg": 0,
       "xa": 0.00118877,
-      "rating": 6.5,
+      "rating": 6.7,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "LD",
       "formation": "4-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 33.797297297297,
+      "average_y": 28.683783783784
     },
     {
       "match_id": 15186502,
       "player_id": 111483,
       "player_name": "Michael Gregoritsch",
       "xg": 0.12540712952614,
-      "xa": 0.0165009,
+      "xa": 0.016501,
       "rating": 6.6,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 63.567647058824,
+      "average_y": 51.697058823529
     },
     {
       "match_id": 15186502,
       "player_id": 133908,
       "player_name": "Marcel Sabitzer",
       "xg": 0.152149029076099,
-      "xa": 0.276131,
-      "rating": 6.7,
+      "xa": 0.27613,
+      "rating": 6.6,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "ME",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 68.731818181818,
+      "average_y": 81.963636363636
     },
     {
       "match_id": 15186502,
@@ -19606,13 +19616,13 @@
       "player_name": "Nicolás Tagliafico",
       "xg": 0,
       "xa": 0.00267198,
-      "rating": 6.6,
+      "rating": 6.8,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "LE",
       "formation": "4-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 38.977777777778,
+      "average_y": 78.566666666667
     },
     {
       "match_id": 15186502,
@@ -19620,27 +19630,27 @@
       "player_name": "Emiliano Martínez",
       "xg": 0,
       "xa": 0.00031761,
-      "rating": 6.6,
+      "rating": 6.8,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 13.1,
+      "average_y": 51.306060606061
     },
     {
       "match_id": 15186502,
       "player_id": 249399,
       "player_name": "Rodrigo De Paul",
       "xg": 0,
-      "xa": 0.0140374,
-      "rating": 6.7,
+      "xa": 0.0140373,
+      "rating": 6.8,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MD",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 48.160317460317,
+      "average_y": 19.638095238095
     },
     {
       "match_id": 15186502,
@@ -19650,11 +19660,11 @@
       "xa": 0.00336415,
       "rating": 6.9,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 46.083333333333,
+      "average_y": 35.283333333333
     },
     {
       "match_id": 15186502,
@@ -19662,69 +19672,69 @@
       "player_name": "Alexander Schlager",
       "xg": 0,
       "xa": 0.00027138,
-      "rating": 6.2,
+      "rating": 6.1,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 13.355555555556,
+      "average_y": 48.666666666667
     },
     {
       "match_id": 15186502,
       "player_id": 355486,
       "player_name": "Stefan Posch",
       "xg": 0,
-      "xa": 0.167774,
-      "rating": 5.8,
+      "xa": 0.167775,
+      "rating": 5.7,
       "nominal_position": "D",
       "detailed_position": "LD",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 55.448484848485,
+      "average_y": 18.278787878788
     },
     {
       "match_id": 15186502,
       "player_id": 355492,
       "player_name": "Konrad Laimer",
       "xg": 0,
-      "xa": 0.0706593,
-      "rating": 6.1,
+      "xa": 0.0706594,
+      "rating": 6.2,
       "nominal_position": "D",
       "detailed_position": "LE",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 59.914084507042,
+      "average_y": 69.761971830986
     },
     {
       "match_id": 15186502,
       "player_id": 791079,
       "player_name": "Xaver Schlager",
       "xg": 0,
-      "xa": 0.0281553,
-      "rating": 6.2,
+      "xa": 0.0281717,
+      "rating": 6.1,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 49.098780487805,
+      "average_y": 58.226829268293
     },
     {
       "match_id": 15186502,
       "player_id": 794953,
       "player_name": "Kevin Danso",
       "xg": 0,
-      "xa": 0.153802,
-      "rating": 6.8,
+      "xa": 0.153801,
+      "rating": 6.7,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 45.445544554455,
+      "average_y": 35.350495049505
     },
     {
       "match_id": 15186502,
@@ -19732,27 +19742,27 @@
       "player_name": "Lautaro Martínez",
       "xg": 0,
       "xa": 0.0283569,
-      "rating": 7.3,
+      "rating": 7.2,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 44.610344827586,
+      "average_y": 53.127586206897
     },
     {
       "match_id": 15186502,
       "player_id": 825771,
       "player_name": "Marco Friedl",
       "xg": 0,
-      "xa": 0.0118434,
-      "rating": 6.7,
+      "xa": 0.0118986,
+      "rating": 6.5,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "LE",
       "formation": "4-2-3-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 44.26,
+      "average_y": 80.065714285714
     },
     {
       "match_id": 15186502,
@@ -19760,13 +19770,13 @@
       "player_name": "Cristian Romero",
       "xg": 0,
       "xa": 0.00627943,
-      "rating": 6.9,
+      "rating": 7.1,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 33.807575757576,
+      "average_y": 33.456060606061
     },
     {
       "match_id": 15186502,
@@ -19774,13 +19784,13 @@
       "player_name": "Romano Schmid",
       "xg": 0,
       "xa": 0.037439,
-      "rating": 6.8,
+      "rating": 6.7,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MEI",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 63.120754716981,
+      "average_y": 30.562264150943
     },
     {
       "match_id": 15186502,
@@ -19788,27 +19798,27 @@
       "player_name": "Nahuel Molina",
       "xg": 0,
       "xa": 0.0137065,
-      "rating": 6.6,
+      "rating": 6.8,
       "nominal_position": "D",
       "detailed_position": "LD",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 38.6015625,
+      "average_y": 16.0796875
     },
     {
       "match_id": 15186502,
       "player_id": 859999,
       "player_name": "Lisandro Martínez",
       "xg": 0,
-      "xa": 0.206247,
-      "rating": 7.1,
+      "xa": 0.206246,
+      "rating": 7.3,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 35.901098901099,
+      "average_y": 67.486813186813
     },
     {
       "match_id": 15186502,
@@ -19816,27 +19826,27 @@
       "player_name": "Facundo Medina",
       "xg": 0,
       "xa": 0.0522011,
-      "rating": 6.9,
+      "rating": 7,
       "nominal_position": "D",
       "detailed_position": "LE",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 44.324358974359,
+      "average_y": 81.560256410256
     },
     {
       "match_id": 15186502,
       "player_id": 895324,
       "player_name": "Alexis Mac Allister",
       "xg": 0,
-      "xa": 0.037346,
-      "rating": 6.8,
+      "xa": 0.0373461,
+      "rating": 6.9,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "VOL",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 44.744444444444,
+      "average_y": 39.127777777778
     },
     {
       "match_id": 15186502,
@@ -19846,67 +19856,67 @@
       "xa": 0.00232394,
       "rating": 6.9,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "PE",
       "formation": "4-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 57.305,
+      "average_y": 79.165
     },
     {
       "match_id": 15186502,
       "player_id": 944656,
       "player_name": "Julián Alvarez",
       "xg": 0.38768038153648,
-      "xa": 0.00929664,
-      "rating": 7,
+      "xa": 0.00938239,
+      "rating": 6.5,
       "nominal_position": "F",
-      "detailed_position": "F",
+      "detailed_position": "CA",
       "formation": "4-4-2",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 58.342857142857,
+      "average_y": 64.442857142857
     },
     {
       "match_id": 15186502,
       "player_id": 944660,
       "player_name": "Thiago Almada",
       "xg": 0,
-      "xa": 0.0520385,
-      "rating": 6.8,
+      "xa": 0.0520384,
+      "rating": 6.9,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 50.156862745098,
+      "average_y": 69
     },
     {
       "match_id": 15186502,
       "player_id": 974505,
       "player_name": "Enzo Fernández",
       "xg": 0.166564926505089,
-      "xa": 0.0589421,
-      "rating": 7.2,
+      "xa": 0.0589427,
+      "rating": 7.3,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-4-2",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 47.060204081633,
+      "average_y": 67.575510204082
     },
     {
       "match_id": 15186502,
       "player_id": 976575,
       "player_name": "Nicolas Seiwald",
       "xg": 0,
-      "xa": 0.0216654,
-      "rating": 7.2,
+      "xa": 0.0216656,
+      "rating": 7.7,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 47.085714285714,
+      "average_y": 51.242857142857
     },
     {
       "match_id": 15186502,
@@ -19916,11 +19926,11 @@
       "xa": 0.00901156,
       "rating": 6.3,
       "nominal_position": "D",
-      "detailed_position": "D",
+      "detailed_position": "LE",
       "formation": "4-2-3-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 59.188,
+      "average_y": 89.116
     },
     {
       "match_id": 15186502,
@@ -19928,27 +19938,27 @@
       "player_name": "Patrick Wimmer",
       "xg": 0.082012720406055,
       "xa": 0.00919408,
-      "rating": 6.4,
+      "rating": 6.3,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MC",
       "formation": "4-2-3-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 56.833333333333,
+      "average_y": 31.413333333333
     },
     {
       "match_id": 15186502,
       "player_id": 994556,
       "player_name": "Carney Chukwuemeka",
       "xg": 0,
-      "xa": 0.0117664,
+      "xa": 0.0117665,
       "rating": 6.5,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "ME",
       "formation": "4-2-3-1",
       "is_starter": false,
-      "average_x": null,
-      "average_y": null
+      "average_x": 64.033333333333,
+      "average_y": 81.155555555556
     },
     {
       "match_id": 15186502,
@@ -19958,11 +19968,11 @@
       "xa": 0.0452218,
       "rating": 6.2,
       "nominal_position": "M",
-      "detailed_position": "M",
+      "detailed_position": "MEI",
       "formation": "4-2-3-1",
       "is_starter": true,
-      "average_x": null,
-      "average_y": null
+      "average_x": 72.713636363636,
+      "average_y": 48.236363636364
     }
   ],
   "players_info": [
