@@ -20,59 +20,39 @@ const DADOS_DIR = "dados";
 const TOURNAMENT_ID = 16;
 const SEASON_ID = 58210;
 
-async function checkLiveGamesWithRetry(jwtToken, retries = 10) {
-    const BASE_URL = 'https://worldcup26.ir';
-    
-    for (let i = 0; i < retries; i++) {
-        try {
-            console.log(`\n⏳ [Tentativa ${i + 1}/${retries}] Verificando API de jogos ao vivo...`);
-            
-            const gamesResponse = await fetch(`${BASE_URL}/get/games`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${jwtToken}`
-                }
-            });
-            
-
-            if (!gamesResponse.ok) {
-                throw new Error(`HTTP Status ${gamesResponse.status}`);
+async function checkLiveGamesESPN() {
+    try {
+        console.log("\n⏳ Verificando jogos ao vivo na API aberta da ESPN...");
+        
+        // Endpoint público da ESPN focado na Copa do Mundo
+        const url = 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard';
+        
+        // Fetch nativo, não precisa de headers malucos nem de proxy
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+        let temJogoAoVivo = false;
+        
+        for (const ev of data.events || []) {
+            // Na ESPN, o state 'in' significa "In Progress" (bola rolando)
+            // 'pre' = não começou / 'post' = encerrado
+            if (ev.status?.type?.state === 'in') {
+                console.log(`🟢 Jogo AO VIVO encontrado: ${ev.name}`);
+                temJogoAoVivo = true;
             }
-
-            const gamesData = await gamesResponse.json();
-            console.log(`\n{${gamesData}`);
-            let live_games = 0;
-            let time_game = '';
-            
-            for (let game of (gamesData.games || [])) {
-                time_game = game.time_elapsed ? game.time_elapsed.toLowerCase().replace(/\s+/g, '') : '';
-
-                if (time_game !== 'notstarted' && time_game !== 'finished' && time_game !== '') {
-                    live_games++;
-                    console.log(`🟢 Jogo em andamento: tempo -> ${time_game}`);
-                }
-            }
-            
-            console.log(`✅ Total de jogos ao vivo encontrados: ${live_games}`);
-            return live_games > 0; // Retorna true se houver jogo, false se não houver
-            
-        } catch (error) {
-            console.error(`❌ Erro na tentativa ${i + 1}: ${error.mesage}`);
-            if (error.cause) {
-                console.error("🔍 Causa raiz do erro de rede:", error.cause);
-            }   
-            
-            if (i === retries - 1) {
-                console.error("🛑 Limite máximo de tentativas alcançado. Assumindo que não há jogos ao vivo para evitar falhas em cascata.");
-                return false;
-            }
-            
-            // Aguarda 2 segundos antes de tentar de novo para não sobrecarregar a API
-            console.log("🔄 Aguardando 2 segundos para tentar novamente...");
-            await new Promise(resolve => setTimeout(resolve, 2000));
         }
+        
+        if (!temJogoAoVivo) {
+            console.log("⏸️ Nenhum jogo da Copa rolando agora (via ESPN).");
+        }
+        
+        return temJogoAoVivo;
+
+    } catch (error) {
+        console.error("❌ Erro ao consultar ESPN:", error.message);
+        return false;
     }
-    return false;
 }
 
 async function fetchJson(url) {
@@ -557,10 +537,8 @@ export async function runScraper() {
 }
 
 try {
-    const JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzk1NzYxMGUyMjIyZTdlMzE5OWYwMSIsImlhdCI6MTc4MjE0MjgyNCwiZXhwIjoxNzg5NDAwNDI0fQ.2xRzSFszzg79RVt8Gu38iyWCyYTMofaUUAhBnzchjGU"; // ATENÇÃO: Insira seu token aqui
-    
     // 1. Verifica se há jogos rodando antes de acionar o Sofascore
-    const temJogoAoVivo = await checkLiveGamesWithRetry(JWT_TOKEN, 10);
+    const temJogoAoVivo = await checkLiveGamesESPN();
     
     if (temJogoAoVivo) {
         console.log("\n🚀 Jogos em andamento detectados! Iniciando raspagem do Sofascore...");
