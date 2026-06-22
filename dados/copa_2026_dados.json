@@ -1,16 +1,6 @@
 {
   "matches": [
     {
-      "match_id": 15186945,
-      "home": "Netherlands",
-      "away": "Japan",
-      "home_score": 2,
-      "away_score": 2,
-      "status": "Ended",
-      "round": "1ª rodada",
-      "roundStage": "Fase de Grupos"
-    },
-    {
       "match_id": 15186904,
       "home": "Côte d'Ivoire",
       "away": "Ecuador",
@@ -301,6 +291,16 @@
       "roundStage": "Fase de Grupos"
     },
     {
+      "match_id": 15186827,
+      "home": "New Zealand",
+      "away": "Egypt",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "1st half",
+      "round": "2ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
       "match_id": 15186710,
       "home": "Mexico",
       "away": "South Africa",
@@ -386,6 +386,16 @@
       "away": "Curaçao",
       "home_score": 7,
       "away_score": 1,
+      "status": "Ended",
+      "round": "1ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186945,
+      "home": "Netherlands",
+      "away": "Japan",
+      "home_score": 2,
+      "away_score": 2,
       "status": "Ended",
       "round": "1ª rodada",
       "roundStage": "Fase de Grupos"
