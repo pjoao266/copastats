@@ -57,7 +57,7 @@ async function checkLiveGamesWithRetry(jwtToken, retries = 10) {
             return live_games > 0; // Retorna true se houver jogo, false se não houver
             
         } catch (error) {
-            console.error(`❌ Erro na tentativa ${i + 1}: ${error.message}`);
+            console.error(`❌ Erro na tentativa ${i + 1}: ${error}`);
             
             if (i === retries - 1) {
                 console.error("🛑 Limite máximo de tentativas alcançado. Assumindo que não há jogos ao vivo para evitar falhas em cascata.");
