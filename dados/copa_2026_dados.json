@@ -1,26 +1,6 @@
 {
   "matches": [
     {
-      "match_id": 15186687,
-      "home": "Ghana",
-      "away": "Panama",
-      "home_score": 1,
-      "away_score": 0,
-      "status": "Ended",
-      "round": "1ª rodada",
-      "roundStage": "Fase de Grupos"
-    },
-    {
-      "match_id": 15186722,
-      "home": "Uzbekistan",
-      "away": "Colombia",
-      "home_score": 1,
-      "away_score": 3,
-      "status": "Ended",
-      "round": "1ª rodada",
-      "roundStage": "Fase de Grupos"
-    },
-    {
       "match_id": 15186731,
       "home": "Czechia",
       "away": "South Africa",
@@ -301,6 +281,26 @@
       "roundStage": "Fase de Grupos"
     },
     {
+      "match_id": 15186744,
+      "home": "South Africa",
+      "away": "South Korea",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "1st half",
+      "round": "3ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186732,
+      "home": "Czechia",
+      "away": "Mexico",
+      "home_score": 0,
+      "away_score": 0,
+      "status": "1st half",
+      "round": "3ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
       "match_id": 15186710,
       "home": "Mexico",
       "away": "South Africa",
@@ -516,6 +516,26 @@
       "away": "Croatia",
       "home_score": 4,
       "away_score": 2,
+      "status": "Ended",
+      "round": "1ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186687,
+      "home": "Ghana",
+      "away": "Panama",
+      "home_score": 1,
+      "away_score": 0,
+      "status": "Ended",
+      "round": "1ª rodada",
+      "roundStage": "Fase de Grupos"
+    },
+    {
+      "match_id": 15186722,
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "home_score": 1,
+      "away_score": 3,
       "status": "Ended",
       "round": "1ª rodada",
       "roundStage": "Fase de Grupos"
@@ -25311,6 +25331,104 @@
       "is_starter": false,
       "average_x": 74.4,
       "average_y": 91.45
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 795282,
+      "player_name": "Guillermo Martínez",
+      "xg": 0,
+      "xa": 0.00061368,
+      "rating": null,
+      "nominal_position": "F",
+      "detailed_position": "CA",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 818406,
+      "player_name": "César Montes",
+      "xg": 0,
+      "xa": 0.00002142,
+      "rating": null,
+      "nominal_position": "D",
+      "detailed_position": "ZAG",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 832868,
+      "player_name": "Jorge Sánchez",
+      "xg": 0,
+      "xa": 0.00079693,
+      "rating": null,
+      "nominal_position": "D",
+      "detailed_position": "LD",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 847151,
+      "player_name": "Edson Álvarez",
+      "xg": 0,
+      "xa": 0.00006312,
+      "rating": null,
+      "nominal_position": "M",
+      "detailed_position": "M",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 865500,
+      "player_name": "Roberto Alvarado",
+      "xg": 0,
+      "xa": 0.00164502,
+      "rating": null,
+      "nominal_position": "F",
+      "detailed_position": "PD",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 989236,
+      "player_name": "Israel Reyes",
+      "xg": 0,
+      "xa": 0.00001346,
+      "rating": null,
+      "nominal_position": "D",
+      "detailed_position": "ZAG",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
+    },
+    {
+      "match_id": 15186732,
+      "player_id": 1638685,
+      "player_name": "Mateo Chávez",
+      "xg": 0,
+      "xa": 0.00049431,
+      "rating": null,
+      "nominal_position": "D",
+      "detailed_position": "LE",
+      "formation": "4-3-3",
+      "is_starter": true,
+      "average_x": null,
+      "average_y": null
     }
   ],
   "players_info": [
