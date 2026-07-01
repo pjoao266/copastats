@@ -39105,15 +39105,15 @@
       "player_id": 70988,
       "player_name": "Thibaut Courtois",
       "xg": 0,
-      "xa": 0.00631254,
-      "rating": 6.8,
+      "xa": 0.00631733,
+      "rating": 6.7,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39143,7 +39143,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 69
+      "minutes_played": 72
     },
     {
       "match_id": 12813013,
@@ -39180,7 +39180,7 @@
       "player_id": 128587,
       "player_name": "Thomas Meunier",
       "xg": 0.01546005345881,
-      "xa": 0.233086,
+      "xa": 0.233157,
       "rating": 7,
       "nominal_position": "D",
       "detailed_position": "D",
@@ -39188,7 +39188,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 36
+      "minutes_played": 39
     },
     {
       "match_id": 12813013,
@@ -39225,7 +39225,7 @@
       "player_id": 248331,
       "player_name": "Brandon Mechele",
       "xg": 0.065588839352131,
-      "xa": 0.0199208,
+      "xa": 0.0199582,
       "rating": 6.6,
       "nominal_position": "D",
       "detailed_position": "ZAG",
@@ -39233,14 +39233,14 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
       "player_id": 329417,
       "player_name": "Timothy Castagne",
       "xg": 0.06355544179678,
-      "xa": 0.120416,
+      "xa": 0.121923,
       "rating": 6.7,
       "nominal_position": "D",
       "detailed_position": "LD",
@@ -39248,7 +39248,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39263,14 +39263,14 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
       "player_id": 580226,
       "player_name": "Mory Diaw",
       "xg": 0,
-      "xa": 0.00131456,
+      "xa": 0.0013437,
       "rating": 6.1,
       "nominal_position": "G",
       "detailed_position": "GL",
@@ -39278,7 +39278,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39293,14 +39293,14 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
       "player_id": 823631,
       "player_name": "Dodi Lukebakio",
-      "xg": 0.189305398613215,
-      "xa": 0.126008,
+      "xg": 0.282205398613215,
+      "xa": 0.129168,
       "rating": 7,
       "nominal_position": "F",
       "detailed_position": "F",
@@ -39308,22 +39308,22 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 61
     },
     {
       "match_id": 12813013,
       "player_id": 845286,
       "player_name": "Ismaïla Sarr",
       "xg": 1.84053964912892,
-      "xa": 0.029597,
-      "rating": 8.2,
+      "xa": 0.029992,
+      "rating": 8.3,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39338,7 +39338,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39360,15 +39360,15 @@
       "player_id": 889378,
       "player_name": "Nicolas Raskin",
       "xg": 0.051547288894653,
-      "xa": 0.148581,
-      "rating": 7.1,
+      "xa": 0.14998,
+      "rating": 7,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 61
     },
     {
       "match_id": 12813013,
@@ -39390,7 +39390,7 @@
       "player_id": 913679,
       "player_name": "Pathé Ismaël Ciss",
       "xg": 0,
-      "xa": 0.0138204,
+      "xa": 0.0138636,
       "rating": 7,
       "nominal_position": "D",
       "detailed_position": "ZAG",
@@ -39398,7 +39398,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39420,15 +39420,15 @@
       "player_id": 923973,
       "player_name": "Amadou Onana",
       "xg": 0,
-      "xa": 0.0001148,
-      "rating": null,
+      "xa": 0.00443558,
+      "rating": 6.5,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 5
+      "minutes_played": 8
     },
     {
       "match_id": 12813013,
@@ -39465,15 +39465,15 @@
       "player_id": 965778,
       "player_name": "Arthur Theate",
       "xg": 0.021118437871337,
-      "xa": 0.0213022,
-      "rating": 6.8,
+      "xa": 0.0218867,
+      "rating": 6.9,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 114
+      "minutes_played": 117
     },
     {
       "match_id": 12813013,
@@ -39503,14 +39503,14 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 41
+      "minutes_played": 44
     },
     {
       "match_id": 12813013,
       "player_id": 1085381,
       "player_name": "Nicolas Jackson",
       "xg": 0,
-      "xa": 0.00161237,
+      "xa": 0.00161232,
       "rating": 6.4,
       "nominal_position": "F",
       "detailed_position": "F",
@@ -39518,7 +39518,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 21
+      "minutes_played": 24
     },
     {
       "match_id": 12813013,
@@ -39540,7 +39540,7 @@
       "player_id": 1142233,
       "player_name": "Diego Moreira",
       "xg": 0,
-      "xa": 0.0179229,
+      "xa": 0.0186503,
       "rating": 6.5,
       "nominal_position": "F",
       "detailed_position": "F",
@@ -39548,7 +39548,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 51
+      "minutes_played": 54
     },
     {
       "match_id": 12813013,
@@ -39563,14 +39563,14 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 48
+      "minutes_played": 51
     },
     {
       "match_id": 12813013,
       "player_id": 1471764,
       "player_name": "El Hadji Malick Diouf",
       "xg": 0,
-      "xa": 0.00103376,
+      "xa": 0.0401663,
       "rating": 6.4,
       "nominal_position": "D",
       "detailed_position": "D",
@@ -39578,7 +39578,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 21
+      "minutes_played": 24
     },
     {
       "match_id": 12813013,
@@ -39593,7 +39593,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 41
+      "minutes_played": 44
     },
     {
       "match_id": 12813013,
@@ -39608,7 +39608,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 18
+      "minutes_played": 21
     }
   ],
   "players_info": [
