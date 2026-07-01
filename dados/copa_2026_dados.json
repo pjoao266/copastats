@@ -806,7 +806,7 @@
       "away": "Senegal",
       "home_score": 2,
       "away_score": 2,
-      "status": "2nd half",
+      "status": "Awaiting extra time",
       "round": "Round of 32",
       "roundStage": "Fase Eliminatória"
     }
@@ -39105,15 +39105,15 @@
       "player_id": 70988,
       "player_name": "Thibaut Courtois",
       "xg": 0,
-      "xa": 0.00075091,
-      "rating": 6.5,
+      "xa": 0.00619326,
+      "rating": 6.6,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39136,29 +39136,29 @@
       "player_name": "Romelu Lukaku",
       "xg": 0.15886707603931,
       "xa": 0.106123,
-      "rating": 7.5,
+      "rating": 7.6,
       "nominal_position": "F",
       "detailed_position": "F",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 48
+      "minutes_played": 53
     },
     {
       "match_id": 12813013,
       "player_id": 106337,
       "player_name": "Idrissa Gana Gueye",
-      "xg": 0.046544145792723,
-      "xa": 0.0209078,
-      "rating": 6.7,
+      "xg": 0.074192505329848,
+      "xa": 0.0262121,
+      "rating": 6.8,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39179,23 +39179,23 @@
       "match_id": 12813013,
       "player_id": 128587,
       "player_name": "Thomas Meunier",
-      "xg": 0.0245,
+      "xg": 0.01546005345881,
       "xa": 0.161871,
-      "rating": 6.9,
+      "rating": 7,
       "nominal_position": "D",
       "detailed_position": "D",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 15
+      "minutes_played": 20
     },
     {
       "match_id": 12813013,
       "player_id": 135666,
       "player_name": "Leandro Trossard",
       "xg": 0.053774502128363,
-      "xa": 0.446635,
+      "xa": 0.448127,
       "rating": 7.5,
       "nominal_position": "M",
       "detailed_position": "M",
@@ -39203,22 +39203,22 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 217704,
       "player_name": "Sadio Mané",
       "xg": 0.042419698089361,
-      "xa": 0.367092,
-      "rating": 7,
+      "xa": 0.369233,
+      "rating": 6.9,
       "nominal_position": "F",
       "detailed_position": "PE",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39233,7 +39233,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39241,14 +39241,14 @@
       "player_name": "Timothy Castagne",
       "xg": 0.06355544179678,
       "xa": 0.101654,
-      "rating": 6.5,
+      "rating": 6.6,
       "nominal_position": "D",
       "detailed_position": "LD",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39256,51 +39256,51 @@
       "player_name": "Youri Tielemans",
       "xg": 0.191725404933091,
       "xa": 0.0220123,
-      "rating": 7.4,
+      "rating": 7.3,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 580226,
       "player_name": "Mory Diaw",
       "xg": 0,
-      "xa": 0.00069287,
-      "rating": 6,
+      "xa": 0.00074287,
+      "rating": 6.1,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 758168,
       "player_name": "Moussa Niakhaté",
       "xg": 0,
-      "xa": 0.213369,
-      "rating": 6.9,
+      "xa": 0.219635,
+      "rating": 7,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 823631,
       "player_name": "Dodi Lukebakio",
       "xg": 0.189305398613215,
-      "xa": 0.111652,
+      "xa": 0.111797,
       "rating": 6.8,
       "nominal_position": "F",
       "detailed_position": "F",
@@ -39308,14 +39308,14 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 37
+      "minutes_played": 42
     },
     {
       "match_id": 12813013,
       "player_id": 845286,
       "player_name": "Ismaïla Sarr",
       "xg": 1.84053964912892,
-      "xa": 0.0254689,
+      "xa": 0.0255518,
       "rating": 8,
       "nominal_position": "F",
       "detailed_position": "CA",
@@ -39323,22 +39323,22 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 873534,
       "player_name": "Krépin Diatta",
       "xg": 0,
-      "xa": 0.0352551,
-      "rating": 6.6,
+      "xa": 0.0380713,
+      "rating": 6.5,
       "nominal_position": "D",
       "detailed_position": "LD",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39361,21 +39361,21 @@
       "player_name": "Nicolas Raskin",
       "xg": 0,
       "xa": 0.138819,
-      "rating": 6.9,
+      "rating": 6.8,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 37
+      "minutes_played": 42
     },
     {
       "match_id": 12813013,
       "player_id": 897291,
       "player_name": "Ismail Jakobs",
       "xg": 0,
-      "xa": 0.0135851,
+      "xa": 0.017857,
       "rating": 6.1,
       "nominal_position": "D",
       "detailed_position": "LE",
@@ -39383,14 +39383,14 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
       "player_id": 913679,
       "player_name": "Pathé Ismaël Ciss",
       "xg": 0,
-      "xa": 0.00987715,
+      "xa": 0.0116087,
       "rating": 6.8,
       "nominal_position": "D",
       "detailed_position": "ZAG",
@@ -39398,7 +39398,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39450,7 +39450,7 @@
       "player_id": 965778,
       "player_name": "Arthur Theate",
       "xg": 0.021118437871337,
-      "xa": 0.0143298,
+      "xa": 0.0154024,
       "rating": 6.6,
       "nominal_position": "D",
       "detailed_position": "ZAG",
@@ -39458,7 +39458,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 93
+      "minutes_played": 98
     },
     {
       "match_id": 12813013,
@@ -39480,15 +39480,15 @@
       "player_id": 1002711,
       "player_name": "Pape Matar Sarr",
       "xg": 0,
-      "xa": 0.00903332,
-      "rating": 6.4,
+      "xa": 0.0117156,
+      "rating": 6.5,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-3-3",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 20
+      "minutes_played": 25
     },
     {
       "match_id": 12813013,
@@ -39518,29 +39518,29 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 30
+      "minutes_played": 35
     },
     {
       "match_id": 12813013,
       "player_id": 1389846,
       "player_name": "Lamine Camara",
       "xg": 0,
-      "xa": 0.00305015,
-      "rating": 6.2,
+      "xa": 0.00712338,
+      "rating": 6.4,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-3-3",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 27
+      "minutes_played": 32
     },
     {
       "match_id": 12813013,
       "player_id": 1590918,
       "player_name": "Ibrahim Mbaye",
       "xg": 0.059137526899576,
-      "xa": 0.00366955,
+      "xa": 0.00929969,
       "rating": 6.5,
       "nominal_position": "F",
       "detailed_position": "F",
@@ -39548,7 +39548,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 20
+      "minutes_played": 25
     }
   ],
   "players_info": [
