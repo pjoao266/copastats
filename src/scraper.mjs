@@ -109,30 +109,69 @@ function classificarPorHeuristica(nominal, x, y) {
     return nominal;
 }
 
+/**
+ * Busca todos os jogos da Copa do Mundo ocorridos desde o primeiro dia 
+ * filtrando por Época e eliminando duplicados de fuso horário.
+ * * @returns {Promise<Array>} Lista de 104 jogos (ou os já jogados até à data).
+ */
 async function getMatches() {
-    let page = 0;
     const validMatches = [];
-    console.log("Buscando jogos...");
-    while (true) {
-        const url = `https://api.sofascore.com/api/v1/unique-tournament/${TOURNAMENT_ID}/season/${SEASON_ID}/events/last/${page}`;
+    
+    // 🟢 NOVO: Criamos um Set para registar os IDs dos jogos já processados.
+    // Como um Set não permite valores duplicados, ajuda-nos a ignorar repetições.
+    const processedMatchIds = new Set();
+
+    console.log("⏳ Iniciando a busca de jogos por intervalo de datas (com filtro de segurança)...");
+
+    const startDate = new Date('2026-06-11');
+    let endDate = new Date(); 
+    endDate.setDate(endDate.getDate() + 2);
+    for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+        
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        const dateStr = `${year}-${month}-${day}`;
+        const url = `https://api.sofascore.com/api/v1/unique-tournament/${TOURNAMENT_ID}/scheduled-events/${dateStr}`;
+
         try {
-            let roundStage = ''
-            let round = ''
             const data = await fetchJson(url);
+            
             for (const ev of data.events || []) {
                 const statusDesc = ev.status?.description;
+                const currentMatchId = ev.id;
+
+                // 🟢 NOVO FILTRO 1: Garante que o jogo pertence à Copa de 2026 (SEASON_ID = 58210)
+                // Se a API trouxer um jogo de outra edição ou categoria, o 'continue' salta para o próximo
+                if (ev.season?.id !== SEASON_ID) {
+                    continue;
+                }
+
+                // 🟢 NOVO FILTRO 2: Evita duplicados causados por sobreposição de fusos horários
+                // Se o ID deste jogo já foi guardado antes, ignora-o
+                if (processedMatchIds.has(currentMatchId)) {
+                    continue;
+                }
+                
+                // Mantém a regra de processar apenas jogos que já começaram ou terminaram
                 if (statusDesc !== 'Not started') {
-                    let roundInfo = ev.roundInfo
+                    let roundStage = '';
+                    let round = '';
+                    let roundInfo = ev.roundInfo;
+
                     if (roundInfo?.name && roundInfo?.name !== '') {
-                        round = roundInfo?.name
-                        roundStage = 'Fase Eliminatória'
-                    }else{
-                        roundStage = 'Fase de Grupos'
-                        round = `${roundInfo?.round}ª rodada`
+                        round = roundInfo?.name;
+                        roundStage = 'Fase Eliminatória';
+                    } else {
+                        roundStage = 'Fase de Grupos';
+                        round = `${roundInfo?.round}ª rodada`;
                     }
 
+                    // 🟢 REGISTO: Adiciona o ID ao Set para sabermos que este jogo já foi tratado
+                    processedMatchIds.add(currentMatchId);
+
                     validMatches.push({
-                        match_id: ev.id,
+                        match_id: currentMatchId,
                         home: ev.homeTeam?.name,
                         away: ev.awayTeam?.name,
                         home_score: ev.homeScore?.current || 0,
@@ -143,12 +182,12 @@ async function getMatches() {
                     });
                 }
             }
-            if (!data.hasNextPage) break;
-            page++;
         } catch (e) {
-            break;
+            console.error(`❌ Erro ao buscar jogos do dia ${dateStr}:`, e.message);
         }
     }
+
+    console.log(`✅ Busca concluída! Total de ${validMatches.length} jogos únicos processados.`);
     return validMatches;
 }
 
@@ -191,15 +230,11 @@ async function processMatch(match, playersCache) {
     const matchGoals = [];
     const playerMatchStats = {};
 
-    
     let roundData = [];
     try {
         const roundData = await fetchJson(`https://api.sofascore.com/api/v1/event/${matchId}/shotmap`);
-        roundInfo = roundData.roundInfo || [];
+        let roundInfo = roundData.roundInfo || []; // Corrigido escopo de variável
     } catch (e) {}
-    // verificar se roundInfo name existe e é diferente de ''
-
-
 
     // 1. SHOTMAP
     let shotsData = [];
@@ -216,7 +251,8 @@ async function processMatch(match, playersCache) {
                 playerMatchStats[pId] = { 
                     match_id: matchId, player_id: pId, player_name: shot.player?.name, 
                     xg: 0.0, xa: 0.0, rating: null, nominal_position: null, detailed_position: null, 
-                    formation: null, is_starter: false, average_x: null, average_y: null 
+                    formation: null, is_starter: false, average_x: null, average_y: null,
+                    minutes_played: 0 // 🟢 NOVO: Inicializamos o campo de minutos jogados aqui
                 };
             }
             if (shot.xg !== undefined) playerMatchStats[pId].xg += shot.xg;
@@ -302,12 +338,17 @@ async function processMatch(match, playersCache) {
                     playerMatchStats[pId] = { 
                         match_id: matchId, player_id: pId, player_name: p.player?.name, 
                         xg: 0.0, xa: 0.0, rating: null, nominal_position: null, detailed_position: null, 
-                        formation: null, is_starter: false, average_x: null, average_y: null 
+                        formation: null, is_starter: false, average_x: null, average_y: null,
+                        minutes_played: 0 // 🟢 NOVO: Inicializamos para jogadores que não chutaram
                     };
                 }
                 
                 playerMatchStats[pId].xa = p.statistics?.expectedAssists || 0.0;
                 playerMatchStats[pId].rating = p.statistics?.rating || null;
+                
+                // 🟢 NOVO: Capturamos os minutos jogados vindos da API!
+                playerMatchStats[pId].minutes_played = p.statistics?.minutesPlayed || 0;
+
                 playerMatchStats[pId].nominal_position = pos;
                 playerMatchStats[pId].is_starter = isStarter;
                 playerMatchStats[pId].formation = formation;
@@ -337,7 +378,7 @@ async function processMatch(match, playersCache) {
                 startersD[2].detailed_position = 'ZAG';
                 startersD[3].detailed_position = 'LE';
             } else if (startersD.length === 3) {
-                startersD.forEach(p => p.detailed_position = 'ZAG'); // Ex: 3-5-2
+                startersD.forEach(p => p.detailed_position = 'ZAG');
             } else if (startersD.length === 5) {
                 startersD[0].detailed_position = 'LD';
                 startersD[1].detailed_position = 'ZAG';
@@ -348,7 +389,7 @@ async function processMatch(match, playersCache) {
                 startersD.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
             }
 
-            // Atribuir Meias (A heurística lida perfeitamente com VOL/MC/MEI/MD/ME através do X e Y)
+            // Atribuir Meias
             startersM.forEach(p => p.detailed_position = classificarPorHeuristica('M', p.average_x, p.average_y));
 
             // Atribuir Atacantes
@@ -364,7 +405,7 @@ async function processMatch(match, playersCache) {
                 startersF.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
             }
 
-            // LÓGICA PARA RESERVAS (Usa heurística baseada no mapa de calor/movimento)
+            // LÓGICA PARA RESERVAS
             const subs = playersList.filter(p => p.substitute).map(p => playerMatchStats[p.player.id]).filter(p => p);
             subs.forEach(p => p.detailed_position = classificarPorHeuristica(p.nominal_position, p.average_x, p.average_y));
         };
@@ -374,8 +415,9 @@ async function processMatch(match, playersCache) {
 
     } catch (e) {}
 
+    // 🟢 NOVO: Atualizado o filtro final para incluir jogadores que tenham minutos jogados (mesmo sem nota ou xG)
     const statsList = Object.values(playerMatchStats).filter(s => 
-        s.xg > 0 || s.xa > 0 || s.rating !== null || s.average_x !== null
+        s.xg > 0 || s.xa > 0 || s.rating !== null || s.average_x !== null || s.minutes_played > 0
     );
     
     return { matchGoals, statsList };
