@@ -39106,14 +39106,14 @@
       "player_name": "Thibaut Courtois",
       "xg": 0,
       "xa": 0.00631733,
-      "rating": 6.7,
+      "rating": 6.8,
       "nominal_position": "G",
       "detailed_position": "GL",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39143,7 +39143,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 72
+      "minutes_played": 77
     },
     {
       "match_id": 12813013,
@@ -39188,7 +39188,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 39
+      "minutes_played": 44
     },
     {
       "match_id": 12813013,
@@ -39226,14 +39226,14 @@
       "player_name": "Brandon Mechele",
       "xg": 0.065588839352131,
       "xa": 0.0199582,
-      "rating": 6.6,
+      "rating": 6.7,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39248,7 +39248,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39256,14 +39256,14 @@
       "player_name": "Youri Tielemans",
       "xg": 0.194736855104562,
       "xa": 0.0320459,
-      "rating": 7.3,
+      "rating": 7.8,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-2-3-1",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39278,7 +39278,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39293,22 +39293,22 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
       "player_id": 823631,
       "player_name": "Dodi Lukebakio",
-      "xg": 0.282205398613215,
+      "xg": 0.189305398613215,
       "xa": 0.129168,
-      "rating": 7,
+      "rating": 7.1,
       "nominal_position": "F",
       "detailed_position": "F",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 61
+      "minutes_played": 66
     },
     {
       "match_id": 12813013,
@@ -39316,14 +39316,14 @@
       "player_name": "Ismaïla Sarr",
       "xg": 1.84053964912892,
       "xa": 0.029992,
-      "rating": 8.3,
+      "rating": 8.2,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39338,7 +39338,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39368,7 +39368,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 61
+      "minutes_played": 66
     },
     {
       "match_id": 12813013,
@@ -39398,7 +39398,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39428,7 +39428,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 8
+      "minutes_played": 13
     },
     {
       "match_id": 12813013,
@@ -39473,7 +39473,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 117
+      "minutes_played": 122
     },
     {
       "match_id": 12813013,
@@ -39503,7 +39503,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 44
+      "minutes_played": 49
     },
     {
       "match_id": 12813013,
@@ -39518,7 +39518,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 24
+      "minutes_played": 29
     },
     {
       "match_id": 12813013,
@@ -39541,14 +39541,14 @@
       "player_name": "Diego Moreira",
       "xg": 0,
       "xa": 0.0186503,
-      "rating": 6.5,
+      "rating": 6.8,
       "nominal_position": "F",
       "detailed_position": "F",
       "formation": "4-2-3-1",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 54
+      "minutes_played": 59
     },
     {
       "match_id": 12813013,
@@ -39556,21 +39556,21 @@
       "player_name": "Lamine Camara",
       "xg": 0,
       "xa": 0.0123318,
-      "rating": 6.1,
+      "rating": 5.8,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "4-3-3",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 51
+      "minutes_played": 56
     },
     {
       "match_id": 12813013,
       "player_id": 1471764,
       "player_name": "El Hadji Malick Diouf",
       "xg": 0,
-      "xa": 0.0401663,
+      "xa": 0.00103376,
       "rating": 6.4,
       "nominal_position": "D",
       "detailed_position": "D",
@@ -39578,7 +39578,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 24
+      "minutes_played": 29
     },
     {
       "match_id": 12813013,
@@ -39593,7 +39593,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 44
+      "minutes_played": 49
     },
     {
       "match_id": 12813013,
@@ -39608,7 +39608,7 @@
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 21
+      "minutes_played": 26
     }
   ],
   "players_info": [
