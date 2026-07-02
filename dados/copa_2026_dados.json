@@ -42132,7 +42132,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42147,7 +42147,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42177,7 +42177,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42192,7 +42192,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42207,7 +42207,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42215,14 +42215,14 @@
       "player_name": "Christian Pulišić",
       "xg": 0.086859494447708,
       "xa": 0.00791989,
-      "rating": 6.8,
+      "rating": 6.7,
       "nominal_position": "F",
       "detailed_position": "PE",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42230,14 +42230,14 @@
       "player_name": "Nikola Katić",
       "xg": 0.015353715978563,
       "xa": 0.00057231,
-      "rating": 6.1,
+      "rating": 6.2,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "5-3-2",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42252,7 +42252,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42267,7 +42267,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42282,7 +42282,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42290,14 +42290,14 @@
       "player_name": "Sergiño Dest",
       "xg": 0,
       "xa": 0.206332,
-      "rating": 7,
+      "rating": 7.1,
       "nominal_position": "F",
       "detailed_position": "PD",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42312,7 +42312,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42320,14 +42320,14 @@
       "player_name": "Folarin Balogun",
       "xg": 0.63836765289307,
       "xa": 0.018896,
-      "rating": 7.1,
+      "rating": 6.5,
       "nominal_position": "F",
       "detailed_position": "CA",
       "formation": "4-3-3",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 64
     },
     {
       "match_id": 12812992,
@@ -42342,7 +42342,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42357,7 +42357,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42380,14 +42380,14 @@
       "player_name": "Benjamin Tahirović",
       "xg": 0,
       "xa": 0.0002112,
-      "rating": null,
+      "rating": 6.5,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "5-3-2",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 7
+      "minutes_played": 14
     },
     {
       "match_id": 12812992,
@@ -42402,7 +42402,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42410,14 +42410,14 @@
       "player_name": "Tarik Muharemović",
       "xg": 0,
       "xa": 0.00142029,
-      "rating": 6.4,
+      "rating": 6.6,
       "nominal_position": "D",
       "detailed_position": "ZAG",
       "formation": "5-3-2",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42425,14 +42425,14 @@
       "player_name": "Esmir Bajraktarević",
       "xg": 0,
       "xa": 0.00106632,
-      "rating": null,
+      "rating": 6.5,
       "nominal_position": "F",
       "detailed_position": "F",
       "formation": "5-3-2",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 7
+      "minutes_played": 14
     },
     {
       "match_id": 12812992,
@@ -42440,14 +42440,14 @@
       "player_name": "Ermin Mahmić",
       "xg": 0,
       "xa": 0.00041806,
-      "rating": null,
+      "rating": 6.4,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "5-3-2",
       "is_starter": false,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 7
+      "minutes_played": 14
     },
     {
       "match_id": 12812992,
@@ -42462,7 +42462,7 @@
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     },
     {
       "match_id": 12812992,
@@ -42470,14 +42470,14 @@
       "player_name": "Kerim Alajbegović",
       "xg": 0,
       "xa": 0.00184502,
-      "rating": 6.1,
+      "rating": 6.2,
       "nominal_position": "M",
       "detailed_position": "M",
       "formation": "5-3-2",
       "is_starter": true,
       "average_x": null,
       "average_y": null,
-      "minutes_played": 58
+      "minutes_played": 65
     }
   ],
   "players_info": [
